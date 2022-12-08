@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class CarSfxHandler : MonoBehaviour
 {
+    [Header("SfxVolume")]
+    public AudioMixer audioMixer;
+
+
     [Header("AudioSources")]
     public AudioSource tireScretchingAudioSource;   
     public AudioSource engineAudioSource;   
@@ -20,6 +24,11 @@ public class CarSfxHandler : MonoBehaviour
         carController1Player = GetComponentInParent<CarController1Player>();
     }
 
+
+    void Start()
+    {
+        audioMixer.SetFloat("SFXVolume", 0.5f);
+    }
 
     private void Update()
     {
@@ -76,6 +85,11 @@ public class CarSfxHandler : MonoBehaviour
 
         hitAudioSource.pitch = Random.Range(0.95f, 1.05f);
         hitAudioSource.volume = volume;
+
+        if (!hitAudioSource.isPlaying)
+        {
+            hitAudioSource.Play();
+        }
 
 
 

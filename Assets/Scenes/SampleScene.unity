@@ -409,7 +409,7 @@ MonoBehaviour:
   _driftFactor: 0.95
   _accelerationFactor: 30
   _turnFactor: 3.5
-  _maxSpeed: 10
+  _maxSpeed: 20
 --- !u!114 &245779984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decded63d1624074eb40af01ee29fdf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
   tireScretchingAudioSource: {fileID: 1908190336}
   engineAudioSource: {fileID: 79238950}
   hitAudioSource: {fileID: 577004299}
