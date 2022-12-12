@@ -10,13 +10,26 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 20f;
 
+    public float bulletTimeInterval = 0.15f;
+
+    public float bulletIntervalCount = 0f;
+
+
+    public AudioSource shooting;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        bulletIntervalCount += Time.deltaTime;
+        if (Input.GetKey(KeyCode.Space))
         {
-            Shoot();
+          if(bulletIntervalCount >= bulletTimeInterval)
+            {
+                bulletIntervalCount = 0;
+                Shoot();
+                shooting.Play();
+            }                        
         }
     }
 
@@ -25,5 +38,6 @@ public class Shooting : MonoBehaviour
         GameObject boolet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = boolet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
     }
 }
