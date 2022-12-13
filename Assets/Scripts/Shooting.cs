@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         bulletIntervalCount += Time.deltaTime;
         if (Input.GetKey(KeyCode.Space))
