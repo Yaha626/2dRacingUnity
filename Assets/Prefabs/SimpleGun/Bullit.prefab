@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3993395246254345450}
   - component: {fileID: 3993395246254345448}
+  - component: {fileID: 3031570020244138961}
   - component: {fileID: 3993395246254345451}
   - component: {fileID: 4158786219882502181}
-  - component: {fileID: -6111698943050427722}
   m_Layer: 0
   m_Name: Bullit
-  m_TagString: Untagged
+  m_TagString: bulletGun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,21 @@ CapsuleCollider2D:
   m_Offset: {x: -0.02, y: -0.04}
   m_Size: {x: 0.39, y: 1.88}
   m_Direction: 0
+--- !u!114 &3031570020244138961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3993395246254345453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0950f383ac4591c4e9e7c2777089e256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _range: 0
+  _attackTimeInterval: 0
 --- !u!50 &3993395246254345451
 Rigidbody2D:
   serializedVersion: 4
@@ -86,20 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 7582581604886031926, guid: f711463b8485924438361d3e0597a387, type: 3}
---- !u!114 &-6111698943050427722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3993395246254345453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0950f383ac4591c4e9e7c2777089e256, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 10
-  _range: 50
 --- !u!1 &3993395248009782240
 GameObject:
   m_ObjectHideFlags: 0
