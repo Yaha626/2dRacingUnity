@@ -10,7 +10,9 @@ public class HealthBar : MonoBehaviour
 
     public float _fill;
 
-    private int _health;
+    private int _currentHealth;
+
+    //private int _maxHealth;
 
 
 
@@ -23,9 +25,10 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
-        _health = GetComponent<CarCondition>()._currentHealth;
+        _currentHealth = GetComponent<CarCondition>()._currentHealth;
+       // _maxHealth = GetComponent<CarCondition>()._maxHealth;
 
-        _fill = _health * 0.01f;
+        _fill = _currentHealth * 0.01f;
 
         if(_healthBar)
         {

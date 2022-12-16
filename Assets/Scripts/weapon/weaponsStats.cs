@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponsStats : MonoBehaviour
+public class weaponsStats : MonoBehaviour
 {
     public int _damage = 10;
 
