@@ -5,19 +5,17 @@ using UnityEngine.UI;
 
 public class CarCondition : MonoBehaviour
 {
+    [SerializeField] GameObject _explousionOnDeath;
+
     [Header ("Health")]
 
     public float _maxHealth = 100f;
 
     public float _currentHealth = 100f;
 
-    [SerializeField] GameObject _explousionOnDeath;
+    public AudioSource explousion;
 
-    public void Awake()
-    {
-       
-    }
-
+   
 
     public void TakeDamage(int _damage)
     {
@@ -25,6 +23,9 @@ public class CarCondition : MonoBehaviour
         
         if(_currentHealth <= 0)
         {
+
+            explousion.Play();
+
             Destroy(gameObject);
 
             Instantiate(_explousionOnDeath, transform.position, transform.rotation);
