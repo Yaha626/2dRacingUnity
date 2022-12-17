@@ -6,35 +6,42 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Image _healthBar;
+    [SerializeField] private Image _healthBar;
 
-    public float _fill;
+    [SerializeField] private Gradient _gradient;
 
-    private int _currentHealth;
+    private float _currentHealth;
 
-    //private int _maxHealth;
+    private float _maxHealth;
 
-
+    private float _valueOfCurrentCondition;
 
     private void Start()
     {
-        _fill = 1f;
+        
+        _healthBar.fillAmount = 1f;
 
+        _healthBar.color = _gradient.Evaluate(1f);
+       
     }
 
 
     private void Update()
     {
         _currentHealth = GetComponent<CarCondition>()._currentHealth;
-       // _maxHealth = GetComponent<CarCondition>()._maxHealth;
+       
+        _maxHealth = GetComponent<CarCondition>()._maxHealth;
 
-        _fill = _currentHealth * 0.01f;
+        _valueOfCurrentCondition = _currentHealth / _maxHealth;
 
-        if(_healthBar)
+
+        if (_healthBar)
         {
-            _healthBar.fillAmount = _fill;
+            _healthBar.fillAmount = _valueOfCurrentCondition;
+
+            _healthBar.color = _gradient.Evaluate(_valueOfCurrentCondition);
         }
-        
-         
+               
     }
+
 }

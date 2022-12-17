@@ -7,9 +7,16 @@ public class CarCondition : MonoBehaviour
 {
     [Header ("Health")]
 
-    public int _maxHealth = 100;
+    public float _maxHealth = 100f;
 
-    public int _currentHealth = 100;
+    public float _currentHealth = 100f;
+
+    [SerializeField] GameObject _explousionOnDeath;
+
+    public void Awake()
+    {
+       
+    }
 
 
     public void TakeDamage(int _damage)
@@ -19,6 +26,8 @@ public class CarCondition : MonoBehaviour
         if(_currentHealth <= 0)
         {
             Destroy(gameObject);
+
+            Instantiate(_explousionOnDeath, transform.position, transform.rotation);
         }
     }
     
