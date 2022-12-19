@@ -1131,6 +1131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1378194942}
   bulletPrefab: {fileID: 3993395246254345453, guid: 18f9ac360c230164e9cb800edcddd221, type: 3}
+  rocketPrefab: {fileID: 3993395246254345453, guid: 2820cefeba77c2b41bffb3cf0a455cf0, type: 3}
   bulletForce: 100
   bulletTimeInterval: 0.1
   bulletIntervalCount: 0
@@ -1163,8 +1164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637956909b5f0a945a403af422b325f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 10
-  _collisionTag: 
 --- !u!114 &245779988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7576,6 +7575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1097469506}
   bulletPrefab: {fileID: 3993395246254345453, guid: 18f9ac360c230164e9cb800edcddd221, type: 3}
+  rocketPrefab: {fileID: 3993395246254345453, guid: 2820cefeba77c2b41bffb3cf0a455cf0, type: 3}
   bulletForce: 100
   bulletTimeInterval: 0.1
   bulletIntervalCount: 0
@@ -7608,8 +7608,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637956909b5f0a945a403af422b325f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 10
-  _collisionTag: bulletGun
 --- !u!114 &981230052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13078,6 +13076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 73067192}
   bulletPrefab: {fileID: 3993395246254345453, guid: 18f9ac360c230164e9cb800edcddd221, type: 3}
+  rocketPrefab: {fileID: 3993395246254345453, guid: 2820cefeba77c2b41bffb3cf0a455cf0, type: 3}
   bulletForce: 100
   bulletTimeInterval: 0.1
   bulletIntervalCount: 0
@@ -13183,8 +13182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637956909b5f0a945a403af422b325f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collisionDamage: 10
-  _collisionTag: bulletGun
 --- !u!114 &1315765177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13435,6 +13432,7 @@ GameObject:
   - component: {fileID: 1364225034}
   - component: {fileID: 1364225033}
   - component: {fileID: 1364225032}
+  - component: {fileID: 1364225035}
   m_Layer: 0
   m_Name: gun
   m_TagString: GunDrop
@@ -13535,6 +13533,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1364225035
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364225031}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1378194941
 GameObject:
   m_ObjectHideFlags: 0
@@ -34208,6 +34227,7 @@ GameObject:
   - component: {fileID: 2134289672}
   - component: {fileID: 2134289671}
   - component: {fileID: 2134289670}
+  - component: {fileID: 2134289673}
   m_Layer: 0
   m_Name: rocket
   m_TagString: RocketDrop
@@ -34308,3 +34328,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2134289673
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134289669}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

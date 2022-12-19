@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class damageCollision : MonoBehaviour
 {
-    public int _collisionDamage = 10;
+    //public int _collisionDamage = 10;
 
-    public string _collisionTag;
+    //public string _collisionTag;
 
     private CarCondition carCondition;
 
+    private int _bulletGunDamage = 10;
+
+    private int _rocketGunDamage = 50;
+
+
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        carCondition = GetComponent<CarCondition>();
-        
+
+
+
+        carCondition = GetComponent<CarCondition>(); 
         
     
-        if (collision.gameObject.tag == _collisionTag)
+        if (collision.gameObject.tag == "bulletGun")
         {
-            GetComponent<CarCondition>().TakeDamage(_collisionDamage);
-         //   carCondition
-           // _collisionDamage = collision.gameObject.GetComponent<WeaponsStats>()._damage;
-           // CarCondition _currentHealth = collision.gameObject.GetComponent<CarCondition>();
-            //_currentHealth.TakeDamage();
-          //  _currentHealth.TakeDamage(_collisionDamage);
+
+            GetComponent<CarCondition>().TakeDamage(_bulletGunDamage);           
+        }
+
+        if(collision.gameObject.tag == "rocketGun")        
+        {
+        
+            GetComponent<CarCondition>().TakeDamage(_rocketGunDamage);
         }
     }
 }

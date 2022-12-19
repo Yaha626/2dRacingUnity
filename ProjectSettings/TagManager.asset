@@ -8,6 +8,9 @@ TagManager:
   - Enemy1
   - RocketDrop
   - GunDrop
+  - rocketGun
+  - RocketGun
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
