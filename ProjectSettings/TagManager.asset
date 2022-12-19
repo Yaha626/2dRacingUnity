@@ -6,6 +6,8 @@ TagManager:
   tags:
   - bulletGun
   - Enemy1
+  - RocketDrop
+  - GunDrop
   layers:
   - Default
   - TransparentFX
