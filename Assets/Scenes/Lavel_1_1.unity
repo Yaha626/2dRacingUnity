@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 104403083}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1068,7 +1068,6 @@ Transform:
   - {fileID: 104403082}
   - {fileID: 1378194942}
   - {fileID: 218341565}
-  - {fileID: 1182658884}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1132,8 +1131,8 @@ MonoBehaviour:
   firePoint: {fileID: 1378194942}
   bulletPrefab: {fileID: 3993395246254345453, guid: 18f9ac360c230164e9cb800edcddd221, type: 3}
   rocketPrefab: {fileID: 3993395246254345453, guid: 2820cefeba77c2b41bffb3cf0a455cf0, type: 3}
-  bulletForce: 100
-  bulletTimeInterval: 0.1
+  bulletForce: 20
+  bulletTimeInterval: 0.15
   bulletIntervalCount: 0
   shooting: {fileID: 96592301}
 --- !u!114 &245779986
@@ -2218,7 +2217,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 245779981}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -2393,11 +2392,11 @@ RectTransform:
   m_Children:
   - {fileID: 428829236}
   m_Father: {fileID: 1923855621}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -192, y: 117}
+  m_AnchoredPosition: {x: 343, y: 217}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563377172
@@ -2894,16 +2893,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658127681}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1129785, y: 0.14211912, z: 0.001}
+  m_LocalPosition: {x: 0, y: 0, z: -1187.1996}
+  m_LocalScale: {x: 1.4291888, y: 0.17584759, z: 0.00041244182}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1182658884}
+  m_Father: {fileID: 1923855621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1, y: -6.999996}
+  m_AnchoredPosition: {x: -350, y: -22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658127683
@@ -8941,120 +8940,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1182658883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1182658884}
-  - component: {fileID: 1182658887}
-  - component: {fileID: 1182658888}
-  - component: {fileID: 1182658886}
-  - component: {fileID: 1182658885}
-  m_Layer: 5
-  m_Name: Canvas (HealthBar)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1182658884
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182658883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.08457096, y: 0.08250825, z: 0.027502751}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 658127682}
-  m_Father: {fileID: 245779981}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.4, y: 0}
-  m_SizeDelta: {x: 130, y: 180}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1182658885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182658883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1182658886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182658883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
---- !u!223 &1182658887
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182658883}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
---- !u!114 &1182658888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182658883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bc0651250e54045992fb0ee4dfd14a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1241322036
 GameObject:
   m_ObjectHideFlags: 0
@@ -14501,8 +14386,9 @@ GameObject:
   - component: {fileID: 1364225033}
   - component: {fileID: 1364225032}
   - component: {fileID: 1364225035}
+  - component: {fileID: 1364225036}
   m_Layer: 0
-  m_Name: gun
+  m_Name: gunLoot
   m_TagString: GunDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14595,7 +14481,7 @@ Transform:
   m_GameObject: {fileID: 1364225031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14.334989, y: 5.2284546, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9634, y: 1.9634, z: 1.9634}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -14622,6 +14508,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1364225036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364225031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81172d8733c74d94eb0a1a5ccfde9bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getAudioEffect: {fileID: 96592301}
+  _lootItem: {fileID: 1364225031}
 --- !u!1 &1378194941
 GameObject:
   m_ObjectHideFlags: 0
@@ -24853,7 +24753,7 @@ RectTransform:
   - {fileID: 489397040}
   - {fileID: 714769334}
   m_Father: {fileID: 1923855621}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -35328,6 +35228,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 658127682}
   - {fileID: 563377171}
   - {fileID: 1628159066}
   m_Father: {fileID: 0}
@@ -35592,8 +35493,9 @@ GameObject:
   - component: {fileID: 2134289671}
   - component: {fileID: 2134289670}
   - component: {fileID: 2134289673}
+  - component: {fileID: 2134289674}
   m_Layer: 0
-  m_Name: rocket
+  m_Name: rocketLoot
   m_TagString: RocketDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35686,7 +35588,7 @@ Transform:
   m_GameObject: {fileID: 2134289669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.29, y: 5.33, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0253, y: 2.0253, z: 2.0253}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -35713,3 +35615,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2134289674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134289669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81172d8733c74d94eb0a1a5ccfde9bbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getAudioEffect: {fileID: 96592301}
+  _lootItem: {fileID: 2134289669}

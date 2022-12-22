@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
 
     public void Start()
     {
-        _currentWeapon = rocketPrefab;
+        _currentWeapon = bulletPrefab;
     }
 
 
