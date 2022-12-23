@@ -7,6 +7,10 @@ public class CarCondition : MonoBehaviour
 {
     [SerializeField] GameObject _explousionOnDeath;
 
+    public GameObject _carObject;
+
+
+
     [Header ("Health")]
 
     public float _maxHealth = 100f;
@@ -26,9 +30,11 @@ public class CarCondition : MonoBehaviour
 
             explousion.Play();
 
-            Destroy(gameObject);
+            DisabledCarOnDeath();
 
             Instantiate(_explousionOnDeath, transform.position, transform.rotation);
+
+            Invoke("EnabledCarOnDeath", 5f);
         }
     }
     
@@ -41,5 +47,23 @@ public class CarCondition : MonoBehaviour
         {
             _currentHealth = _maxHealth;
         }
+    }
+
+
+    public void DisabledCarOnDeath()
+    {
+        _carObject.SetActive(false);
+    }
+
+
+    public void EnabledCarOnDeath()
+    {
+        _carObject.SetActive(true);
+
+        _currentHealth = _maxHealth;
+
+
+
+
     }
 }

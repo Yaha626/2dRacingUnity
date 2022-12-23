@@ -10,7 +10,7 @@ public class Shooting : MonoBehaviour
 
     public GameObject rocketPrefab;
 
-    public float bulletForce = 20f;
+    public float bulletForce = 40f;
 
     public float bulletTimeInterval = 0.15f;
 
@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
 
             _currentWeapon = bulletPrefab;
 
-              bulletForce = 20f;
+              bulletForce = 40f;
 
               bulletTimeInterval = 0.15f;            
 
@@ -47,9 +47,9 @@ public class Shooting : MonoBehaviour
 
             _currentWeapon = rocketPrefab;
 
-            bulletForce = 5f;
+            bulletForce = 20f;
 
-            bulletTimeInterval = 0.15f;
+            bulletTimeInterval = 0.9f;
 
         }
     }
@@ -64,8 +64,7 @@ public class Shooting : MonoBehaviour
           if(bulletIntervalCount >= bulletTimeInterval)
             {
                 bulletIntervalCount = 0;
-                Shoot();
-                shooting.Play();
+                Shoot();              
             }                        
         }
     }
@@ -73,8 +72,11 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         GameObject boolet = Instantiate(_currentWeapon, firePoint.position, firePoint.rotation);
+        
         Rigidbody2D rb = boolet.GetComponent<Rigidbody2D>();
+        
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-
+      
     }
+
 }

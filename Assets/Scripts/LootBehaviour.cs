@@ -18,12 +18,25 @@ public class LootBehaviour : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
 
-            _lootItem.SetActive(false);
+            SetDisabledLoot();
 
             getAudioEffect.Play();
 
+            Invoke("SetActiveLoot", 2f);
+
         }
             
+    }
+
+
+    public void SetActiveLoot()
+    {
+        _lootItem.SetActive(true);
+    }
+
+    public void SetDisabledLoot()
+    {
+        _lootItem.SetActive(false);
     }
 
 }

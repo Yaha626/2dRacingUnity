@@ -14,4 +14,18 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject); 
 
     }
+
+    void Awake()
+    {
+
+        Invoke("DestroyBullet", 5f);
+
+    }
+
+    public void DestroyBullet()
+    {
+
+        Destroy(gameObject);
+
+    }
 }
