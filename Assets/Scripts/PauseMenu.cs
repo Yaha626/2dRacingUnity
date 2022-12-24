@@ -10,6 +10,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseGameMenu;
 
+    [SerializeField] GameObject _mainMenu;
+
+    [SerializeField] GameObject _garageMenu;
+
+
 
 
 
@@ -52,6 +57,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadGarage()
+    {
+        Time.timeScale = 1f;       
+        SceneManager.LoadScene("Menu");
+        //_mainMenu.SetActive(false);
+        //_garageMenu.SetActive(true);
     }
 
     public void LoadLevel()
