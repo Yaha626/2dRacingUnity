@@ -21,8 +21,7 @@ public class GetInfoStartLevel : MonoBehaviour
         {
             _Car1.SetActive(true);
         }
-
-        Debug.Log(_currentCar);
+       
     }
 
    
