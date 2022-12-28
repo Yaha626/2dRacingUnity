@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    [SerializeField] GameObject _uiWeaponGun;
+
+    [SerializeField] GameObject _uiWeaponRocket;
+
+
     public Transform firePoint;
 
     public GameObject bulletPrefab;
@@ -18,6 +23,8 @@ public class Shooting : MonoBehaviour
 
     private GameObject _currentWeapon;
 
+    private GameObject _currentWeaponUIinfo;
+
 
     public AudioSource shooting;
 
@@ -25,6 +32,10 @@ public class Shooting : MonoBehaviour
     public void Start()
     {
         _currentWeapon = bulletPrefab;
+
+        _currentWeaponUIinfo = _uiWeaponGun;
+
+        _currentWeaponUIinfo.SetActive(true);
     }
 
 
@@ -39,7 +50,13 @@ public class Shooting : MonoBehaviour
 
               bulletForce = 40f;
 
-              bulletTimeInterval = 0.15f;            
+              bulletTimeInterval = 0.15f;
+
+            _currentWeaponUIinfo.SetActive(false);
+            _currentWeaponUIinfo = _uiWeaponGun;
+            _currentWeaponUIinfo.SetActive(true);
+
+
 
         }
         if (collision.gameObject.tag == "RocketDrop")
@@ -50,6 +67,10 @@ public class Shooting : MonoBehaviour
             bulletForce = 20f;
 
             bulletTimeInterval = 0.9f;
+
+            _currentWeaponUIinfo.SetActive(false);
+            _currentWeaponUIinfo = _uiWeaponRocket;
+            _currentWeaponUIinfo.SetActive(true);
 
         }
     }

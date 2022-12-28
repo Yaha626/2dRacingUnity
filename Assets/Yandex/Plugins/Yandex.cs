@@ -15,10 +15,14 @@ public class Yandex : MonoBehaviour
 
 
     [SerializeField] TextMeshProUGUI _nameText;
+    
     [SerializeField] RawImage _photo;
 
+   // [SerializeField] TextMeshProUGUI _typeOfDevice;
 
- public void HelloButton()
+
+
+    public void HelloButton()
     {
         GetPlayerDataFromYandex();
     }
@@ -29,6 +33,11 @@ public class Yandex : MonoBehaviour
         _nameText.text = name;
     }
 
+
+   // public void SetDypeOfDevice(string name)
+   // {
+   //     _typeOfDevice.text = name;
+   // }
 
     public void SetPhoto(string url)
     {

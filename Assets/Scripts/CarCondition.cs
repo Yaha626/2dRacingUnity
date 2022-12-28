@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CarCondition : MonoBehaviour
 {
+
+
+
     [SerializeField] GameObject _explousionOnDeath;
 
     public GameObject _carObject;
@@ -18,6 +21,7 @@ public class CarCondition : MonoBehaviour
     public float _currentHealth = 100f;
 
     public AudioSource explousion;
+
 
    
 
