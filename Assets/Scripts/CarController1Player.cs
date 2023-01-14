@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarController1Player : MonoBehaviour
 {
+    
     [Header("CarSettings")]
     public float _driftFactor = 0.95f;
     public float _accelerationFactor = 30.0f;
@@ -115,4 +116,5 @@ public class CarController1Player : MonoBehaviour
         _turnInput = inputVector.x;
         _accelerationInput = inputVector.y;
     }
+
 }

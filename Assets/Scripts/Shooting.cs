@@ -25,6 +25,10 @@ public class Shooting : MonoBehaviour
 
     private GameObject _currentWeaponUIinfo;
 
+    private bool _shootButton = false;
+
+    
+
 
     public AudioSource shooting;
 
@@ -80,7 +84,7 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         bulletIntervalCount += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) || _shootButton)
         {
           if(bulletIntervalCount >= bulletTimeInterval)
             {
@@ -88,9 +92,21 @@ public class Shooting : MonoBehaviour
                 Shoot();              
             }                        
         }
+
     }
 
-    void Shoot()
+    
+    public void MobileShootButtonDown()
+    {
+        _shootButton = true;
+    }
+
+    public void MobileShootButtonUp()
+    {
+        _shootButton = false;
+    }
+
+    public void Shoot()
     {
         GameObject boolet = Instantiate(_currentWeapon, firePoint.position, firePoint.rotation);
         
