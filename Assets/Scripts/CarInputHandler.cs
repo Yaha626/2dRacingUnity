@@ -8,11 +8,10 @@ public class CarInputHandler : MonoBehaviour
 
     private float _accelerate = 0f;
 
-    private float _brakeReverce = 0f;
+    private float _turn = 0f;
 
-    private float _turnLeft = 0f;
+    public float _testTemporaryControlViever;
 
-    private float _turnRight = 0f;
 
     CarController1Player _carController1Player;
 
@@ -25,28 +24,35 @@ public class CarInputHandler : MonoBehaviour
         _platformType = YandexGame.EnvironmentData.deviceType;
     }
 
-
+    // "desktop"
+    // "mobile"
     private void Update()
     {
-        if(_platformType == "desktop")
-        {
-            Vector2 inputVector = Vector2.zero;
+        Vector2 inputVector = Vector2.zero;
+        if (_platformType == "desktop")
+         {
+           // Vector2 inputVector = Vector2.zero;
 
             inputVector.x = Input.GetAxis("Horizontal");
             inputVector.y = Input.GetAxis("Vertical");
 
-            _carController1Player.SetInputVector(inputVector);
+            //_testTemporaryControlViever = inputVector.x;
+
+           // _carController1Player.SetInputVector(inputVector);
+
         }
         else
         {
-            Vector2 inputVector = Vector2.zero;
+           // Vector2 inputVector = Vector2.zero;
 
-            inputVector.x = _accelerate;
-           // inputVector.y = ;
+            inputVector.x = _turn;
+            inputVector.y = _accelerate;
 
-            _carController1Player.SetInputVector(inputVector);
+           // _carController1Player.SetInputVector(inputVector);
         }
+        _testTemporaryControlViever = inputVector.x;
 
+        _carController1Player.SetInputVector(inputVector);
 
     }
 
@@ -56,9 +62,43 @@ public class CarInputHandler : MonoBehaviour
     }
 
 
+    public void BrakeButtonDown()
+    {
+        _accelerate = -1f;
+    }
+
+
     public void AccelerateButtonUp()
     {
         _accelerate = 0f;
+    }
+
+    public void BrakeButtonUp()
+    {
+        _accelerate = 0f;
+    }
+
+
+    public void TurnLeftButtonDown()
+    {
+        _turn = -1f;
+    }
+
+
+    public void TurnRightButtonDown()
+    {
+        _turn = 1f;
+    }
+
+
+    public void TurnLeftButtonUp()
+    {
+        _turn = 0f;
+    }
+
+    public void TurnRightButtonUp()
+    {
+        _turn = 0f;
     }
 
 }

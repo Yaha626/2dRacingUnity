@@ -1846,7 +1846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347, y: -36}
+  m_AnchoredPosition: {x: -354, y: -28}
   m_SizeDelta: {x: 49.173, y: 46.255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226381132
@@ -2251,9 +2251,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonDown
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: BrakeButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2267,9 +2267,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonUp
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: AccelerateButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2529,7 +2529,7 @@ Transform:
   - {fileID: 56547692}
   - {fileID: 1754336038}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340180207
 GameObject:
@@ -2807,7 +2807,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1364225035
 Rigidbody2D:
@@ -2881,7 +2881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 327.27313, y: -62}
+  m_AnchoredPosition: {x: 331, y: -57}
   m_SizeDelta: {x: 84.627, y: 46.255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404866167
@@ -2901,9 +2901,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonDown
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: AccelerateButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2917,9 +2917,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonUp
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: AccelerateButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3151,13 +3151,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1573612267}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1094.7609}
+  m_LocalScale: {x: 12.16401, y: 12.16401, z: 12.16401}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1604031723}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604031722
 GameObject:
@@ -3192,6 +3192,7 @@ RectTransform:
   - {fileID: 1271069970}
   - {fileID: 2068212945}
   - {fileID: 2047997162}
+  - {fileID: 1573612270}
   m_Father: {fileID: 1923855621}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3372,7 +3373,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3930,7 +3931,7 @@ RectTransform:
   - {fileID: 1628159066}
   - {fileID: 352400113}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3965,6 +3966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da387267c8a14f4eb6700ecc0a8b5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _MobileControlMenu: {fileID: 1604031722}
   _PlayerDeviceFromYandex: {fileID: 1465618108}
 --- !u!1 &2047997161
 GameObject:
@@ -4023,9 +4025,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonDown
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: TurnRightButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4039,9 +4041,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonUp
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: TurnRightButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4190,9 +4192,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonDown
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: TurnLeftButtonDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4206,9 +4208,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2009663236672140720}
-          m_TargetAssemblyTypeName: Shooting, Assembly-CSharp
-          m_MethodName: MobileShootButtonUp
+        - m_Target: {fileID: 2009663236672140721}
+          m_TargetAssemblyTypeName: CarInputHandler, Assembly-CSharp
+          m_MethodName: TurnLeftButtonUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4533,7 +4535,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2134289673
 Rigidbody2D:
@@ -4673,6 +4675,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65d57b45dea44cc4a8d69b10af34a01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2009663236672140721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+  m_PrefabInstance: {fileID: 2009663236672140718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009663236672140719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c74e0530a07ec4fae752ca7386791e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5380805772071463503
