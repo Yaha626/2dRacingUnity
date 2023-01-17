@@ -10,9 +10,6 @@ public class CarInputHandler : MonoBehaviour
 
     private float _turn = 0f;
 
-    public float _testTemporaryControlViever;
-
-
     CarController1Player _carController1Player;
 
     private string _platformType;
@@ -29,30 +26,25 @@ public class CarInputHandler : MonoBehaviour
     private void Update()
     {
         Vector2 inputVector = Vector2.zero;
-        if (_platformType == "desktop")
+        if (_platformType != "desktop")
          {
-           // Vector2 inputVector = Vector2.zero;
 
             inputVector.x = Input.GetAxis("Horizontal");
             inputVector.y = Input.GetAxis("Vertical");
 
-            //_testTemporaryControlViever = inputVector.x;
-
-           // _carController1Player.SetInputVector(inputVector);
-
         }
         else
         {
-           // Vector2 inputVector = Vector2.zero;
 
             inputVector.x = _turn;
             inputVector.y = _accelerate;
-
-           // _carController1Player.SetInputVector(inputVector);
+    
         }
-        _testTemporaryControlViever = inputVector.x;
 
         _carController1Player.SetInputVector(inputVector);
+
+      
+
 
     }
 
