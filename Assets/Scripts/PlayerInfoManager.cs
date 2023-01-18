@@ -26,7 +26,7 @@ public class PlayerInfoManager : MonoBehaviour
 
         _MobileControlMenu.SetActive(true);
 
-       // MobileControlCanvasHider();
+        MobileControlCanvasHider();
 
     }
 
