@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
-using UnityEngine.UI;
 
 public class CarInputHandler : MonoBehaviour
 {
@@ -38,7 +37,7 @@ public class CarInputHandler : MonoBehaviour
     private void Update()
     {
 
-        if (_platformType == "desktop")
+        if (_platformType != "desktop")
         {
             Vector2 inputVector = Vector2.zero;
 
