@@ -2,9 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
+using UnityEngine.UI;
 
 public class CarInputHandler : MonoBehaviour
 {
+
+    [SerializeField] GameObject _ButtonBrake;
+
+    [SerializeField] GameObject _ButtonAccelerate;
+
+    [SerializeField] GameObject _ButtonLeft;
+
+    [SerializeField] GameObject _ButtonRight;
+
+    [SerializeField] GameObject _ButtonFire;
+
 
     public float _accelerateVector = 0f;
 
@@ -25,9 +37,6 @@ public class CarInputHandler : MonoBehaviour
     // "mobile"
     private void Update()
     {
-       // _accelerateVector = 0f;
-
-       // _brakeVector = 0f;
 
         if (_platformType == "desktop")
         {
@@ -76,16 +85,34 @@ public class CarInputHandler : MonoBehaviour
     public void AccelerateBrakeButtonUp()
     {
         _accelerateVector = 0f;
+
+        AntiStickingBrakeAccelerate();
     }
 
     public void TurnButtonUp()
     {
         _turnVector = 0f;
+
+        AntiStickingTurn();
+
     }
 
+    public void AntiStickingBrakeAccelerate()
+    {
+        _ButtonBrake.SetActive(false);
+        _ButtonBrake.SetActive(true);
+        _ButtonAccelerate.SetActive(false);
+        _ButtonAccelerate.SetActive(true);
 
+    }
 
+    public void AntiStickingTurn()
+    {
+        _ButtonLeft.SetActive(false);
+        _ButtonLeft.SetActive(true);
+        _ButtonRight.SetActive(false);
+        _ButtonRight.SetActive(true);
 
-
+    }
 
 }

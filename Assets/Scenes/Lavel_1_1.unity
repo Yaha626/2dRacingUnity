@@ -449,7 +449,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -2964,7 +2964,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -3153,7 +3153,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1604031722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3320,7 +3320,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4527,7 +4527,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 1
+  - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -4558,6 +4558,26 @@ PrefabInstance:
       propertyPath: _joystick
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: _ButtonFire
+      value: 
+      objectReference: {fileID: 1226381130}
+    - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: _ButtonLeft
+      value: 
+      objectReference: {fileID: 1657343557}
+    - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: _ButtonBrake
+      value: 
+      objectReference: {fileID: 1526892344}
+    - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: _ButtonRight
+      value: 
+      objectReference: {fileID: 257570140}
+    - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: _ButtonAccelerate
+      value: 
+      objectReference: {fileID: 2141504935}
     - target: {fileID: 2009663236515265440, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
       propertyPath: _MobileJoystickTurn
       value: 
