@@ -6,17 +6,6 @@ using YG;
 public class CarInputHandler : MonoBehaviour
 {
 
-    [SerializeField] GameObject _ButtonBrake;
-
-    [SerializeField] GameObject _ButtonAccelerate;
-
-    [SerializeField] GameObject _ButtonLeft;
-
-    [SerializeField] GameObject _ButtonRight;
-
-    [SerializeField] GameObject _ButtonFire;
-
-
     public float _accelerateVector = 0f;
 
     public float _turnVector = 0f;
@@ -85,32 +74,11 @@ public class CarInputHandler : MonoBehaviour
     {
         _accelerateVector = 0f;
 
-        AntiStickingBrakeAccelerate();
     }
 
     public void TurnButtonUp()
     {
         _turnVector = 0f;
-
-        AntiStickingTurn();
-
-    }
-
-    public void AntiStickingBrakeAccelerate()
-    {
-        _ButtonBrake.SetActive(false);
-        _ButtonBrake.SetActive(true);
-        _ButtonAccelerate.SetActive(false);
-        _ButtonAccelerate.SetActive(true);
-
-    }
-
-    public void AntiStickingTurn()
-    {
-        _ButtonLeft.SetActive(false);
-        _ButtonLeft.SetActive(true);
-        _ButtonRight.SetActive(false);
-        _ButtonRight.SetActive(true);
 
     }
 
