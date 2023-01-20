@@ -26,7 +26,7 @@ public class CarInputHandler : MonoBehaviour
     private void Update()
     {
 
-        if (_platformType != "desktop")
+        if (_platformType == "desktop")
         {
             Vector2 inputVector = Vector2.zero;
 
@@ -47,39 +47,6 @@ public class CarInputHandler : MonoBehaviour
             _carController1Player.SetInputVector(inputVector);
 
         }
-    }
-
-    public void AccelerateButtonDown()
-    {
-        _accelerateVector = 1f;
-    }
-
-    public void BrakeReverceButtonDown()
-    {
-        _accelerateVector = -1f;
-    }
-
-
-    public void TurnLeftButtonDown()
-    {
-        _turnVector = -1f;
-    }
-
-    public void TurnRightButtonDown()
-    {
-        _turnVector = 1f;
-    }
-
-    public void AccelerateBrakeButtonUp()
-    {
-        _accelerateVector = 0f;
-
-    }
-
-    public void TurnButtonUp()
-    {
-        _turnVector = 0f;
-
     }
 
 }

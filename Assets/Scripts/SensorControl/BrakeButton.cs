@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AccelerateButton : MonoBehaviour
+public class BrakeButton : MonoBehaviour
 {
 
     public GameObject objectCarInputHandler;
 
     CarInputHandler _carInputHandler;
 
-    
+
 
     private void Awake()
     {
-        
+
         _carInputHandler = objectCarInputHandler.GetComponent<CarInputHandler>();
     }
 
     private void OnMouseDown()
     {
-        
-        _carInputHandler._accelerateVector = 1f;
+
+        _carInputHandler._accelerateVector = -1f;
 
     }
 
@@ -30,6 +30,4 @@ public class AccelerateButton : MonoBehaviour
         _carInputHandler._accelerateVector = 0f;
 
     }
-
-
 }

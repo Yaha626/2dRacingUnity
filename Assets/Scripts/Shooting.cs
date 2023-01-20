@@ -25,7 +25,7 @@ public class Shooting : MonoBehaviour
 
     private GameObject _currentWeaponUIinfo;
 
-    private bool _shootButton = false;
+    public bool _shootButton = false;
 
     
 
