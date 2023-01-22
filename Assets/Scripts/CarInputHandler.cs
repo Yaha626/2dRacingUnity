@@ -49,4 +49,53 @@ public class CarInputHandler : MonoBehaviour
         }
     }
 
+
+    public void AccelerateButtonDown()
+    {
+
+       _accelerateVector = 1f;
+
+    }
+
+
+    public void BrakeButtonDown()
+    {
+
+        _accelerateVector = -1f;
+
+    }
+
+
+    public void AccelerateBrakeButtonUp()
+    {
+
+        _accelerateVector = 0f;
+
+    }
+
+
+    public void LeftButtonDown()
+    {
+
+        _turnVector = -1f;
+
+    }
+
+
+    public void RightButtonDown()
+    {
+
+        _turnVector = 1f;
+
+    }
+
+
+    public void TurneButtonUp()
+    {
+
+        _turnVector = 0f;
+
+    }
+
+
 }
