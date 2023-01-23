@@ -1,0 +1,71 @@
+{
+    "name": "SensorControl",
+    "maps": [
+        {
+            "name": "Player1",
+            "id": "9c04e13a-ecc6-40fa-9ac9-ae7c32d7fbaa",
+            "actions": [
+                {
+                    "name": "Ride",
+                    "type": "Button",
+                    "id": "a7387ea7-08a8-4f9b-bf4d-5eeaedd9112d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "09a0bc39-0347-4afa-9640-83143f79774e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7ae89405-bd4c-4fe9-8e24-aca919a7a1df",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardPC",
+                    "action": "Ride",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9cce1b0-faa1-42c3-8dc5-d82fe4386b7a",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KeyboardPC",
+            "bindingGroup": "KeyboardPC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "AndroidSonsor",
+            "bindingGroup": "AndroidSonsor",
+            "devices": []
+        }
+    ]
+}
