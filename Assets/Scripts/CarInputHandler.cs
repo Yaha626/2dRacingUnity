@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
+using UnityEngine.InputSystem;
+
+//[ RequireComponent(typeof(PlayerInput))]
 
 public class CarInputHandler : MonoBehaviour
 {
+   // public void OnShoot();
 
     public float _accelerateVector = 0f;
 
@@ -23,6 +27,9 @@ public class CarInputHandler : MonoBehaviour
 
     // "desktop"
     // "mobile"
+
+
+    /*
     private void Update()
     {
 
@@ -48,6 +55,8 @@ public class CarInputHandler : MonoBehaviour
 
         }
     }
+
+    */
 
 
     public void AccelerateButtonDown()

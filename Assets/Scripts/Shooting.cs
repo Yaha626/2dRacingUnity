@@ -1,12 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+
+
+//[RequireComponent(typeof(PlayerInput))]
+
 
 public class Shooting : MonoBehaviour
 {
+    private PlayerInput _playerInput;
+
+    bool _isShooting = false;
+
+
     [SerializeField] GameObject _uiWeaponGun;
 
     [SerializeField] GameObject _uiWeaponRocket;
+
+
+    private void Awake()
+    {
+        _playerInput = new PlayerInput();
+
+        _playerInput.Player1.Shoot.performed += ctx => ShootButton();
+    }
+
+
+    private void OnEnable()
+    {
+        _playerInput.Enable();
+    }
+
+
+    private void OnDisable()
+    {
+        _playerInput.Disable();
+    }
+
+
 
 
     public Transform firePoint;
@@ -84,15 +117,22 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         bulletIntervalCount += Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) || _shootButton)
+        //if (Input.GetKey(KeyCode.Space) || _shootButton)
+        if(_isShooting  || _shootButton )
         {
           if(bulletIntervalCount >= bulletTimeInterval)
             {
                 bulletIntervalCount = 0;
-                Shoot();              
+                OnShoot();
+                
             }                        
         }
 
+    }
+
+    public void ShootButton(InputValue val)
+    {
+        _isShooting = val.isPressed;
     }
 
     
@@ -106,7 +146,8 @@ public class Shooting : MonoBehaviour
         _shootButton = false;
     }
 
-    public void Shoot()
+   
+    public void OnShoot()
     {
         GameObject boolet = Instantiate(_currentWeapon, firePoint.position, firePoint.rotation);
         
@@ -115,5 +156,5 @@ public class Shooting : MonoBehaviour
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
       
     }
-
+   
 }
