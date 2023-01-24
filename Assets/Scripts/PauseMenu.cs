@@ -20,7 +20,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-
+/*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (PauseGame)
@@ -32,7 +32,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-
+*/
 
     }
 

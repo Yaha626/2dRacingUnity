@@ -5,41 +5,15 @@ using UnityEngine.InputSystem;
 
 
 
-//[RequireComponent(typeof(PlayerInput))]
-
 
 public class Shooting : MonoBehaviour
 {
     private PlayerInput _playerInput;
 
-    bool _isShooting = false;
-
 
     [SerializeField] GameObject _uiWeaponGun;
 
     [SerializeField] GameObject _uiWeaponRocket;
-
-
-    private void Awake()
-    {
-        _playerInput = new PlayerInput();
-
-        _playerInput.Player1.Shoot.performed += ctx => ShootButton();
-    }
-
-
-    private void OnEnable()
-    {
-        _playerInput.Enable();
-    }
-
-
-    private void OnDisable()
-    {
-        _playerInput.Disable();
-    }
-
-
 
 
     public Transform firePoint;
@@ -58,22 +32,70 @@ public class Shooting : MonoBehaviour
 
     private GameObject _currentWeaponUIinfo;
 
-    public bool _shootButton = false;
-
-    
-
+    private bool _shootButton = false;
 
     public AudioSource shooting;
 
 
+
+    private void Awake()
+    {
+
+        _playerInput = new PlayerInput();
+
+    }
+
+
+
+    private void OnEnable()
+    {
+        _playerInput.Enable();
+    }
+
+
+
+    private void OnDisable()
+    {
+        _playerInput.Disable();
+    }
+
+
+
     public void Start()
     {
+
+        _playerInput.Player1.Shoot.performed += Shoot_performed;
+
+        _playerInput.Player1.Shoot.canceled += Shoot_canceled;
+
+
         _currentWeapon = bulletPrefab;
 
         _currentWeaponUIinfo = _uiWeaponGun;
 
         _currentWeaponUIinfo.SetActive(true);
     }
+
+
+
+    private void Shoot_canceled(InputAction.CallbackContext obj)
+    {
+        // throw new System.NotImplementedException();
+
+        _shootButton = false;
+
+    }
+
+
+
+    private void Shoot_performed(InputAction.CallbackContext obj)
+    {
+       // throw new System.NotImplementedException();
+
+        _shootButton = true;
+
+    }
+
 
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -90,7 +112,9 @@ public class Shooting : MonoBehaviour
               bulletTimeInterval = 0.15f;
 
             _currentWeaponUIinfo.SetActive(false);
+
             _currentWeaponUIinfo = _uiWeaponGun;
+
             _currentWeaponUIinfo.SetActive(true);
 
 
@@ -106,7 +130,9 @@ public class Shooting : MonoBehaviour
             bulletTimeInterval = 0.9f;
 
             _currentWeaponUIinfo.SetActive(false);
+
             _currentWeaponUIinfo = _uiWeaponRocket;
+
             _currentWeaponUIinfo.SetActive(true);
 
         }
@@ -117,12 +143,14 @@ public class Shooting : MonoBehaviour
     void FixedUpdate()
     {
         bulletIntervalCount += Time.deltaTime;
-        //if (Input.GetKey(KeyCode.Space) || _shootButton)
-        if(_isShooting  || _shootButton )
+
+        if (_shootButton)
         {
           if(bulletIntervalCount >= bulletTimeInterval)
             {
+
                 bulletIntervalCount = 0;
+
                 OnShoot();
                 
             }                        
@@ -130,31 +158,33 @@ public class Shooting : MonoBehaviour
 
     }
 
-    public void ShootButton(InputValue val)
-    {
-        _isShooting = val.isPressed;
-    }
 
-    
-    public void MobileShootButtonDown()
-    {
-        _shootButton = true;
-    }
 
-    public void MobileShootButtonUp()
-    {
-        _shootButton = false;
-    }
-
-   
     public void OnShoot()
     {
         GameObject boolet = Instantiate(_currentWeapon, firePoint.position, firePoint.rotation);
-        
+
         Rigidbody2D rb = boolet.GetComponent<Rigidbody2D>();
-        
+
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-      
+
     }
-   
+
+    /*  
+      public void MobileShootButtonDown()
+      {
+          _shootButton = true;
+      }
+
+
+
+      public void MobileShootButtonUp()
+      {
+          _shootButton = false;
+      }
+
+     */
+
+
+
 }
