@@ -80,7 +80,6 @@ public class Shooting : MonoBehaviour
 
     private void Shoot_canceled(InputAction.CallbackContext obj)
     {
-        // throw new System.NotImplementedException();
 
         _shootButton = false;
 
@@ -90,7 +89,6 @@ public class Shooting : MonoBehaviour
 
     private void Shoot_performed(InputAction.CallbackContext obj)
     {
-       // throw new System.NotImplementedException();
 
         _shootButton = true;
 
@@ -169,22 +167,5 @@ public class Shooting : MonoBehaviour
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
 
     }
-
-    /*  
-      public void MobileShootButtonDown()
-      {
-          _shootButton = true;
-      }
-
-
-
-      public void MobileShootButtonUp()
-      {
-          _shootButton = false;
-      }
-
-     */
-
-
 
 }

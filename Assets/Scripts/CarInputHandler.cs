@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
-using UnityEngine.InputSystem;
+//using YG;
+//using UnityEngine.InputSystem;
 
-//[ RequireComponent(typeof(PlayerInput))]
+
 
 public class CarInputHandler : MonoBehaviour
 {
-   // public void OnShoot();
+
+    private PlayerInput _playerInput;
 
     public float _accelerateVector = 0f;
 
@@ -16,95 +17,68 @@ public class CarInputHandler : MonoBehaviour
 
     CarController1Player _carController1Player;
 
-    private string _platformType;
+  //  private string _platformType;
 
     private void Awake()
     {
+
         _carController1Player = GetComponent<CarController1Player>();
 
-        _platformType = YandexGame.EnvironmentData.deviceType;
+       // _platformType = YandexGame.EnvironmentData.deviceType;
+
+        _playerInput = new PlayerInput();
+
+    }
+
+
+
+    private void OnEnable()
+    {
+        _playerInput.Enable();
+    }
+
+
+
+    private void OnDisable()
+    {
+        _playerInput.Disable();
     }
 
     // "desktop"
     // "mobile"
 
 
-    /*
+    
     private void Update()
     {
 
-        if (_platformType == "desktop")
-        {
-            Vector2 inputVector = Vector2.zero;
+        Vector2 driveVector = _playerInput.Player1.Ride.ReadValue<Vector2>();
+      
+        _carController1Player.SetInputVector(driveVector);
 
-            inputVector.x = Input.GetAxis("Horizontal");
-            inputVector.y = Input.GetAxis("Vertical");
 
-            _carController1Player.SetInputVector(inputVector);
+        /*     if (_platformType == "desktop")
+             {
+                 Vector2 inputVector = Vector2.zero;
 
-        }
-        else
-        {
+                 inputVector.x = Input.GetAxis("Horizontal");
+                 inputVector.y = Input.GetAxis("Vertical");
 
-            Vector2 inputVector = Vector2.zero;
+                 _carController1Player.SetInputVector(inputVector);
 
-            inputVector.x = _turnVector;
-            inputVector.y = _accelerateVector;
+             }
+             else
+             {
 
-            _carController1Player.SetInputVector(inputVector);
+                 Vector2 inputVector = Vector2.zero;
 
-        }
+                 inputVector.x = _turnVector;
+                 inputVector.y = _accelerateVector;
+
+                 _carController1Player.SetInputVector(inputVector);
+
+             }
+        */
     }
-
-    */
-
-
-    public void AccelerateButtonDown()
-    {
-
-       _accelerateVector = 1f;
-
-    }
-
-
-    public void BrakeButtonDown()
-    {
-
-        _accelerateVector = -1f;
-
-    }
-
-
-    public void AccelerateBrakeButtonUp()
-    {
-
-        _accelerateVector = 0f;
-
-    }
-
-
-    public void LeftButtonDown()
-    {
-
-        _turnVector = -1f;
-
-    }
-
-
-    public void RightButtonDown()
-    {
-
-        _turnVector = 1f;
-
-    }
-
-
-    public void TurneButtonUp()
-    {
-
-        _turnVector = 0f;
-
-    }
-
 
 }
