@@ -68,7 +68,6 @@ public class Shooting : MonoBehaviour
 
         _playerInput.Player1.Shoot.canceled += Shoot_canceled;
 
-
         _currentWeapon = bulletPrefab;
 
         _currentWeaponUIinfo = _uiWeaponGun;
@@ -80,19 +79,27 @@ public class Shooting : MonoBehaviour
 
     private void Shoot_canceled(InputAction.CallbackContext obj)
     {
-
-        _shootButton = false;
-
+      
+       _shootButton = false;
+      
     }
 
 
 
-    private void Shoot_performed(InputAction.CallbackContext obj)
-    {
-
-        _shootButton = true;
+    
+     private void Shoot_performed(InputAction.CallbackContext obj)
+     {
+        if(bulletIntervalCount >= bulletTimeInterval)
+        {
+            _shootButton = true;
+            bulletIntervalCount = 0;
+        }
+        // _shootButton = true;
+       // bulletIntervalCount = 0;
 
     }
+    
+
 
 
 
@@ -142,15 +149,16 @@ public class Shooting : MonoBehaviour
     {
         bulletIntervalCount += Time.deltaTime;
 
-        if (_shootButton)
+        if (_shootButton & bulletIntervalCount >= bulletTimeInterval)
         {
-          if(bulletIntervalCount >= bulletTimeInterval)
+            
+            if(bulletIntervalCount >= bulletTimeInterval)
             {
 
-                bulletIntervalCount = 0;
+              bulletIntervalCount = 0;
 
-                OnShoot();
-                
+              OnShoot();
+
             }                        
         }
 

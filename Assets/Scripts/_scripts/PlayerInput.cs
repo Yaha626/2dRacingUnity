@@ -38,7 +38,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Shoot"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""09a0bc39-0347-4afa-9640-83143f79774e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
