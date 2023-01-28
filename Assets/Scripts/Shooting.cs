@@ -24,7 +24,7 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 40f;
 
-    public float bulletTimeInterval = 0.15f;
+    public float bulletTimeInterval = 0.20f;
 
     public float bulletIntervalCount = 0f;
 
@@ -66,7 +66,7 @@ public class Shooting : MonoBehaviour
 
         _playerInput.Player1.Shoot.performed += Shoot_performed;
 
-        _playerInput.Player1.Shoot.canceled += Shoot_canceled;
+        _playerInput.Player1.Shoot2.performed += Shoot2_performed;
 
         _currentWeapon = bulletPrefab;
 
@@ -77,35 +77,31 @@ public class Shooting : MonoBehaviour
 
 
 
-    private void Shoot_canceled(InputAction.CallbackContext obj)
-    {
-      
-       _shootButton = false;
-      
-    }
-
-
-
     
-     private void Shoot_performed(InputAction.CallbackContext obj)
+     private void Shoot2_performed(InputAction.CallbackContext obj)
      {
-        if(bulletIntervalCount >= bulletTimeInterval)
-        {
-            _shootButton = true;
-            bulletIntervalCount = 0;
-        }
-        // _shootButton = true;
-       // bulletIntervalCount = 0;
 
+         if (bulletIntervalCount > bulletTimeInterval)
+         {   
+            _shootButton = true;
+
+         }
+     
     }
-    
+
+    private void Shoot_performed(InputAction.CallbackContext obj)
+    {
+ 
+            _shootButton = true;
+        
+    }
+
 
 
 
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
 
         if (collision.gameObject.tag == "GunDrop")
         {
@@ -121,8 +117,6 @@ public class Shooting : MonoBehaviour
             _currentWeaponUIinfo = _uiWeaponGun;
 
             _currentWeaponUIinfo.SetActive(true);
-
-
 
         }
         if (collision.gameObject.tag == "RocketDrop")
@@ -147,17 +141,20 @@ public class Shooting : MonoBehaviour
 
     void FixedUpdate()
     {
+
         bulletIntervalCount += Time.deltaTime;
 
-        if (_shootButton & bulletIntervalCount >= bulletTimeInterval)
-        {
-            
-            if(bulletIntervalCount >= bulletTimeInterval)
+        if (_shootButton)
+        {       
+
+            if (bulletIntervalCount > bulletTimeInterval)
             {
 
-              bulletIntervalCount = 0;
+                bulletIntervalCount = 0;
 
-              OnShoot();
+                _shootButton = false;
+
+                OnShoot();
 
             }                        
         }

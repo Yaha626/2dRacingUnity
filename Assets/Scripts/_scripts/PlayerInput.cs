@@ -44,6 +44,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7107228-d16d-47dc-830b-8e5952302c9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Ride"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f8b9afc-b302-4881-8650-c2b51c362f76"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPC"",
+                    ""action"": ""Shoot2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -139,6 +159,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_Ride = m_Player1.FindAction("Ride", throwIfNotFound: true);
         m_Player1_Shoot = m_Player1.FindAction("Shoot", throwIfNotFound: true);
+        m_Player1_Shoot2 = m_Player1.FindAction("Shoot2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -200,12 +221,14 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_Ride;
     private readonly InputAction m_Player1_Shoot;
+    private readonly InputAction m_Player1_Shoot2;
     public struct Player1Actions
     {
         private @PlayerInput m_Wrapper;
         public Player1Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Ride => m_Wrapper.m_Player1_Ride;
         public InputAction @Shoot => m_Wrapper.m_Player1_Shoot;
+        public InputAction @Shoot2 => m_Wrapper.m_Player1_Shoot2;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -221,6 +244,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot;
+                @Shoot2.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot2;
+                @Shoot2.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot2;
+                @Shoot2.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnShoot2;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -231,6 +257,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @Shoot2.started += instance.OnShoot2;
+                @Shoot2.performed += instance.OnShoot2;
+                @Shoot2.canceled += instance.OnShoot2;
             }
         }
     }
@@ -257,5 +286,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnRide(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnShoot2(InputAction.CallbackContext context);
     }
 }

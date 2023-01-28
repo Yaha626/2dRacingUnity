@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot2",
+                    "type": "Button",
+                    "id": "b7107228-d16d-47dc-830b-8e5952302c9b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -90,6 +99,17 @@
                     "action": "Ride",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6f8b9afc-b302-4881-8650-c2b51c362f76",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardPC",
+                    "action": "Shoot2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
