@@ -10,12 +10,15 @@ public class HealthBarPositionEnemy : MonoBehaviour
 
 
     void Start()
-    {   
+    { 
+        
          _cameraMain = Camera.main;
+
     }
 
     private void LateUpdate()
       {
+
          transform.LookAt(new Vector3(transform.position.x, transform.position.y, _cameraMain.transform.position.z));
     //transform.Rotate(0, 180, 0);
 

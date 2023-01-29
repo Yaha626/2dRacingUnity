@@ -39,36 +39,53 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+
         PauseGameMenu.SetActive(false);
+
         Time.timeScale = 1f;
+
         PauseGame = false;
+
     }
 
 
     public void Pause()
     {
+
         PauseGameMenu.SetActive(true);
+
         Time.timeScale = 0f;
+
         PauseGame = true;
+
     }
 
 
     public void LoadMenu()
     {
+
         Time.timeScale = 1f;
+
         SceneManager.LoadScene("Menu");
+
     }
+
 
     public void LoadGarage()
     {
-        Time.timeScale = 1f;       
+
+        Time.timeScale = 1f;   
+        
         SceneManager.LoadScene("Menu");
+
         //_mainMenu.SetActive(false);
         //_garageMenu.SetActive(true);
     }
 
     public void LoadLevel()
     {
+
         SceneManager.LoadScene("Lavel_1_1");
+
     }
 }

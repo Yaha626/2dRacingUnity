@@ -11,6 +11,9 @@ TagManager:
   - rocketGun
   - RocketGun
   - FxTemporaire
+  - PrioraGrayJocker
+  - PrioraYellow
+  - MusculeBlue
   layers:
   - Default
   - TransparentFX

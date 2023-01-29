@@ -64,7 +64,7 @@ public class Shooting : MonoBehaviour
     public void Start()
     {
 
-        _playerInput.Player1.Shoot.performed += Shoot_performed;
+        _playerInput.Player1.Shoot.performed += Shoot_performed;   
 
         _playerInput.Player1.Shoot2.performed += Shoot2_performed;
 
@@ -78,22 +78,24 @@ public class Shooting : MonoBehaviour
 
 
     
-     private void Shoot2_performed(InputAction.CallbackContext obj)
+    private void Shoot2_performed(InputAction.CallbackContext obj)
      {
 
-         if (bulletIntervalCount > bulletTimeInterval)
-         {   
-            _shootButton = true;
+        if (bulletIntervalCount > bulletTimeInterval)
+        {   
+           _shootButton = true;
 
-         }
+        }
      
-    }
+     }
 
     private void Shoot_performed(InputAction.CallbackContext obj)
     {
- 
-            _shootButton = true;
-        
+
+        bulletIntervalCount = 0;
+
+        _shootButton = true;
+
     }
 
 
@@ -143,21 +145,17 @@ public class Shooting : MonoBehaviour
     {
 
         bulletIntervalCount += Time.deltaTime;
+               
+          if (_shootButton & bulletIntervalCount > bulletTimeInterval)
+          {
 
-        if (_shootButton)
-        {       
+              bulletIntervalCount = 0;
 
-            if (bulletIntervalCount > bulletTimeInterval)
-            {
+              OnShoot();
 
-                bulletIntervalCount = 0;
+          }
 
-                _shootButton = false;
-
-                OnShoot();
-
-            }                        
-        }
+        _shootButton = false;
 
     }
 

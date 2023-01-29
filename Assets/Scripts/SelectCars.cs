@@ -14,11 +14,14 @@ public class SelectCars : MonoBehaviour
 
     public GameObject _SelectCarsMenu;
 
+    private string _currentTypeCar1P;
+
 
 
 
     private void Start()
     {
+
         _indexOfCar = PlayerPrefs.GetInt("SelectCar");
 
         _cars = new GameObject[transform.childCount];
@@ -42,6 +45,7 @@ public class SelectCars : MonoBehaviour
 
     public void SelectLeft()
     {
+
         _cars[_indexOfCar].SetActive(false);
 
         _indexOfCar--;
@@ -52,11 +56,21 @@ public class SelectCars : MonoBehaviour
         }
 
         _cars[_indexOfCar].SetActive(true);
+
+        _currentTypeCar1P = _cars[_indexOfCar].tag;
+
+        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
+
+        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+
+
+
     }
 
 
     public void SelectRight()
     {
+
         _cars[_indexOfCar].SetActive(false);
 
         _indexOfCar++;
@@ -67,17 +81,27 @@ public class SelectCars : MonoBehaviour
         }
 
         _cars[_indexOfCar].SetActive(true);
+
+        _currentTypeCar1P = _cars[_indexOfCar].tag;
+
+        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
+
+        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+
     }
 
 
     public void StartLevelSceen()
     {
+
+        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
+
         PlayerPrefs.SetInt("SelectCar", _indexOfCar);
 
         PlayerInfoManager._SelectedCar = _indexOfCar;
 
         SceneManager.LoadScene("Lavel_1_1");
-        
+
     }
 
 

@@ -6,6 +6,7 @@ public class WheelTrailHandlerRander : MonoBehaviour
 {
 
     CarController1Player carController1Player;
+
     TrailRenderer trailRenderer;
 
     private void Awake()
@@ -19,8 +20,23 @@ public class WheelTrailHandlerRander : MonoBehaviour
 
     private void Update()
     {
+
         if (carController1Player.IsTireScretching(out float lateralVelocity, out bool isBraking))
+        {
+
             trailRenderer.emitting = true;
-        else trailRenderer.emitting = false;
+
+        }
+        else
+        {
+
+            trailRenderer.emitting = false;
+
+        }
+
     }
+
+           
+
+        
 }

@@ -9,6 +9,8 @@ public class PlayerInfoManager : MonoBehaviour
 
     public static int _SelectedCar;
 
+    public static string _currentTypeCar;
+
     private string _platformType;
 
     [SerializeField] GameObject _MobileControlMenu;
@@ -20,6 +22,7 @@ public class PlayerInfoManager : MonoBehaviour
 
     private void Start()
     {
+
         _PlayerDeviceFromYandex.text = YandexGame.EnvironmentData.deviceType;
 
         _platformType = YandexGame.EnvironmentData.deviceType;
@@ -28,14 +31,20 @@ public class PlayerInfoManager : MonoBehaviour
 
         //MobileControlCanvasHider();
 
+        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+
     }
 
     private void MobileControlCanvasHider()
     {
+
         if(_platformType == "desktop")
         {
+
             _MobileControlMenu.SetActive(false);
+
         }
+
     }
 
 

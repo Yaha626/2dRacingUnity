@@ -9,9 +9,10 @@ public class LootBehaviour : MonoBehaviour
 
     public GameObject _lootItem;
 
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-
  
         if(collision.gameObject.tag == "Player")
         {
@@ -29,12 +30,17 @@ public class LootBehaviour : MonoBehaviour
 
     public void SetActiveLoot()
     {
+
         _lootItem.SetActive(true);
+
     }
+
 
     public void SetDisabledLoot()
     {
+
         _lootItem.SetActive(false);
+
     }
 
 }
