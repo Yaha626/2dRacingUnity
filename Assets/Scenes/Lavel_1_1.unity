@@ -2497,6 +2497,7 @@ MonoBehaviour:
   - {fileID: 2009663236672140721}
   - {fileID: 2009663236672140720}
   - {fileID: 2009663236672140719}
+  - {fileID: -3888481672020999207, guid: 211941aa526900f488b9822c3f2af761, type: 3}
 --- !u!1 &1340180207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4408,10 +4409,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8276409561620971614, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
 --- !u!1 &2009663236672140719 stripped

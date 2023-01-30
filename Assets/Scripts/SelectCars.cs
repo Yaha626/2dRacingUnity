@@ -98,7 +98,7 @@ public class SelectCars : MonoBehaviour
 
         PlayerPrefs.SetInt("SelectCar", _indexOfCar);
 
-        PlayerInfoManager._SelectedCar = _indexOfCar;
+       // PlayerInfoManager._SelectedCar = _indexOfCar;
 
         SceneManager.LoadScene("Lavel_1_1");
 

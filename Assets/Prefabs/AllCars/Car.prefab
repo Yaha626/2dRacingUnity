@@ -5137,6 +5137,7 @@ Transform:
   - {fileID: 4720155438420552804}
   - {fileID: 4561343751578906708}
   - {fileID: 2053480936292524960}
+  - {fileID: 7111322814568687003}
   m_Father: {fileID: 2009663236515265443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
@@ -10949,6 +10950,80 @@ Transform:
   m_Father: {fileID: 2009663236515265443}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2009663236694264440
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2009663235819399045}
+    m_Modifications:
+    - target: {fileID: -3888481672020999207, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_Name
+      value: PrioraBlackTop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 7243324766535440047, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+--- !u!4 &7111322814568687003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8742538545776668643, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+  m_PrefabInstance: {fileID: 2009663236694264440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4094581439671223175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11122,9 +11197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -3888481672020999207, guid: 0df2d61eb47ef5c49a43dedb877eb3bd, type: 3}
       propertyPath: m_Name
-      value: "\u041C\u0430\u0448\u0438\u043D\u0430. \u042D\u0444\u0444\u0435\u043A\u0442
-        \u043D\u0430\u043B\u043E\u0436\u0435\u043D\u0438\u044F. \u0412\u0438\u0434
-        2. 2"
+      value: MusculeBlueTop
       objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 0df2d61eb47ef5c49a43dedb877eb3bd, type: 3}
       propertyPath: m_IsActive

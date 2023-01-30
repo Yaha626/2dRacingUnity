@@ -7,7 +7,7 @@ using YG;
 public class PlayerInfoManager : MonoBehaviour
 {
 
-    public static int _SelectedCar;
+   // public static int _SelectedCar;
 
     public static string _currentTypeCar;
 
@@ -29,7 +29,7 @@ public class PlayerInfoManager : MonoBehaviour
 
         _MobileControlMenu.SetActive(true);
 
-        //MobileControlCanvasHider();
+        MobileControlCanvasHider();
 
         Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
 
