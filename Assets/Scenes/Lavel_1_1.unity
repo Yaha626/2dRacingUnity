@@ -2014,6 +2014,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879529457}
   m_CullTransparentMesh: 1
+--- !u!1 &1229016841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6875106402778486844, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+  m_PrefabInstance: {fileID: 2009663236672140718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1255778377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,7 +2499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1CarSprite:
-  - {fileID: 2009663236672140721}
+  - {fileID: 1229016841}
   - {fileID: 2009663236672140720}
   - {fileID: 2009663236672140719}
   - {fileID: -3888481672020999207, guid: 211941aa526900f488b9822c3f2af761, type: 3}
@@ -4409,6 +4414,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5902693631889803681, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
 --- !u!1 &2009663236672140719 stripped
@@ -4419,11 +4428,6 @@ GameObject:
 --- !u!1 &2009663236672140720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 871392652446211182, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
-  m_PrefabInstance: {fileID: 2009663236672140718}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2009663236672140721 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8276409561620971614, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
   m_PrefabInstance: {fileID: 2009663236672140718}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5380805772071463503

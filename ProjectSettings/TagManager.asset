@@ -15,6 +15,13 @@ TagManager:
   - PrioraYellow
   - MusculeBlue
   - PrioraBlack
+  - Priora
+  - Muscule
+  - Blue
+  - Yellow
+  - Black
+  - Gray
+  - PrioraGray
   layers:
   - Default
   - TransparentFX

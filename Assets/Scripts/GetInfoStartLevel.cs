@@ -9,8 +9,8 @@ public class GetInfoStartLevel : MonoBehaviour
 
     private string _TypeOfBodyPlayer1;
 
-    
-    void Start()
+
+    private void Awake()
     {
 
         _TypeOfBodyPlayer1 = StaticInfoPlayer1._currentTypeCar1P;

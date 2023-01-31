@@ -8,13 +8,24 @@ public class SelectCars : MonoBehaviour
   
     private GameObject[] _cars;
 
+    public GameObject[] _prioraColor;
+   
+    public GameObject[] _musculeColor;
+
     private int _indexOfCar;
 
     public GameObject _MainMenu;
 
     public GameObject _SelectCarsMenu;
 
-    private string _currentTypeCar1P;
+   // private string _currentTypeCar1P;
+
+    private string _typeOfCar;
+
+    private string _typeOfColor;
+
+    private string _typeOfSkin;
+
 
 
 
@@ -24,11 +35,15 @@ public class SelectCars : MonoBehaviour
 
         _indexOfCar = PlayerPrefs.GetInt("SelectCar");
 
+
+
+        
+
         _cars = new GameObject[transform.childCount];
 
         for(int i = 0; i < transform.childCount; i++)
         {
-            _cars[i] = transform.GetChild(i).gameObject;    
+           _cars[i] = transform.GetChild(i).gameObject;    
         }
 
         foreach(GameObject go in _cars)
@@ -39,6 +54,45 @@ public class SelectCars : MonoBehaviour
         if (_cars[_indexOfCar])
         {
             _cars[_indexOfCar].SetActive(true);
+        }
+
+       
+
+        
+        foreach (GameObject go in _prioraColor)
+        {
+
+            if (go.tag == _typeOfColor)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
+        }
+
+        foreach (GameObject go in _musculeColor)
+        {
+
+            if (go.tag == _typeOfColor)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
         }
 
     }
@@ -57,13 +111,9 @@ public class SelectCars : MonoBehaviour
 
         _cars[_indexOfCar].SetActive(true);
 
-        _currentTypeCar1P = _cars[_indexOfCar].tag;
+        _typeOfCar = _cars[_indexOfCar].tag;
 
-        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
-
-        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
-
-
+        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
 
     }
 
@@ -82,11 +132,9 @@ public class SelectCars : MonoBehaviour
 
         _cars[_indexOfCar].SetActive(true);
 
-        _currentTypeCar1P = _cars[_indexOfCar].tag;
+        _typeOfCar = _cars[_indexOfCar].tag;
 
-        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
-
-        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
 
     }
 
@@ -94,11 +142,17 @@ public class SelectCars : MonoBehaviour
     public void StartLevelSceen()
     {
 
-        StaticInfoPlayer1._currentTypeCar1P = _currentTypeCar1P;
+        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
 
         PlayerPrefs.SetInt("SelectCar", _indexOfCar);
 
-       // PlayerInfoManager._SelectedCar = _indexOfCar;
+        PlayerPrefs.SetString("_typeOfCar", _typeOfCar);
+
+        PlayerPrefs.SetString("_typeOfColor", _typeOfColor);
+
+        PlayerPrefs.SetString("_typeOfSkin", _typeOfSkin);
+
+
 
         SceneManager.LoadScene("Lavel_1_1");
 
@@ -125,4 +179,114 @@ public class SelectCars : MonoBehaviour
 
 
     }
+
+
+
+    public void SelectColorYellow()
+    {
+        _typeOfColor = "Yellow";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+    public void SelectColorBlue()
+    {
+
+        _typeOfColor = "Blue";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+    public void SelectColorGray()
+    {
+
+        _typeOfColor = "Gray";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+    public void SelectColorRed()
+    {
+
+        _typeOfColor = "Red";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+    public void SelectColorBlack()
+    {
+        _typeOfColor = "Black";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+
+    public void SelectColorGreen()
+    {
+
+        _typeOfColor = "Green";
+
+        SelectorCurrentCarSpriteAndTag();
+
+    }
+
+
+
+    private void SelectorCurrentCarSpriteAndTag()
+    {
+        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
+
+        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+
+        foreach (GameObject go in _prioraColor)
+        {
+
+            if (go.tag == _typeOfColor)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
+        }
+
+        foreach (GameObject go in _musculeColor)
+        {
+
+            if (go.tag == _typeOfColor)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
+        }
+    }
+
+
+  
+
+
 }
