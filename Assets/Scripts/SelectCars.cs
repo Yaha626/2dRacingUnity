@@ -35,9 +35,7 @@ public class SelectCars : MonoBehaviour
 
         _indexOfCar = PlayerPrefs.GetInt("SelectCar");
 
-
-
-        
+        Debug.Log(_indexOfCar);
 
         _cars = new GameObject[transform.childCount];
 
@@ -51,48 +49,9 @@ public class SelectCars : MonoBehaviour
             go.SetActive(false);
         }
 
-        if (_cars[_indexOfCar])
+        if (_cars[_indexOfCar ])
         {
             _cars[_indexOfCar].SetActive(true);
-        }
-
-       
-
-        
-        foreach (GameObject go in _prioraColor)
-        {
-
-            if (go.tag == _typeOfColor)
-            {
-
-                go.SetActive(true);
-
-            }
-            else
-            {
-
-                go.SetActive(false);
-
-            }
-
-        }
-
-        foreach (GameObject go in _musculeColor)
-        {
-
-            if (go.tag == _typeOfColor)
-            {
-
-                go.SetActive(true);
-
-            }
-            else
-            {
-
-                go.SetActive(false);
-
-            }
-
         }
 
     }
@@ -175,8 +134,6 @@ public class SelectCars : MonoBehaviour
         _MainMenu.SetActive(false);
 
         _SelectCarsMenu.SetActive(true);
-
-
 
     }
 

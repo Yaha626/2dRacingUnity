@@ -2499,10 +2499,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player1CarSprite:
-  - {fileID: 1229016841}
   - {fileID: 2009663236672140720}
+  - {fileID: 2009663236672140723}
+  - {fileID: 1229016841}
   - {fileID: 2009663236672140719}
-  - {fileID: -3888481672020999207, guid: 211941aa526900f488b9822c3f2af761, type: 3}
+  - {fileID: 2009663236672140722}
+  - {fileID: 2009663236672140721}
 --- !u!1 &1340180207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,6 +4430,21 @@ GameObject:
 --- !u!1 &2009663236672140720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 871392652446211182, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+  m_PrefabInstance: {fileID: 2009663236672140718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2009663236672140721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4544135058960812299, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+  m_PrefabInstance: {fileID: 2009663236672140718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2009663236672140722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5584044302703131236, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
+  m_PrefabInstance: {fileID: 2009663236672140718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2009663236672140723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5902693631889803681, guid: 4c5527555cd90774a84fd913ee941900, type: 3}
   m_PrefabInstance: {fileID: 2009663236672140718}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5380805772071463503
