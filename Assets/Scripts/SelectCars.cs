@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SelectCars : MonoBehaviour
 {
   
-    private GameObject[] _cars;
+    public GameObject[] _carBodyType;
 
     public GameObject[] _prioraColor;
    
     public GameObject[] _musculeColor;
 
-    private int _indexOfCar;
-
     public GameObject _MainMenu;
 
     public GameObject _SelectCarsMenu;
-
-   // private string _currentTypeCar1P;
 
     private string _typeOfCar;
 
@@ -26,74 +23,108 @@ public class SelectCars : MonoBehaviour
 
     private string _typeOfSkin;
 
+    public GameObject _skinScrollMenu;
+
+    public GameObject _carScrollMenu;
+
+    public TextMeshProUGUI _TextSelectorCarScin;
+
 
 
 
 
     private void Start()
     {
+        _typeOfCar = StaticInfoPlayer1._currentTypeBodyCar;
 
-        _indexOfCar = PlayerPrefs.GetInt("SelectCar");
+        _typeOfColor = StaticInfoPlayer1._currentTypeColorCar;
 
-        Debug.Log(_indexOfCar);
+        _typeOfSkin = StaticInfoPlayer1._currentTypeSkinCar;
 
-        _cars = new GameObject[transform.childCount];
 
-        for(int i = 0; i < transform.childCount; i++)
+
+        PlayerPrefs.GetString("_typeOfCar", _typeOfCar);
+
+        PlayerPrefs.GetString("_typeOfColor", _typeOfColor);
+
+        PlayerPrefs.GetString("_typeOfSkin", _typeOfSkin);
+
+
+
+        foreach (GameObject go in _carBodyType)
         {
-           _cars[i] = transform.GetChild(i).gameObject;    
+
+            if (go.tag == _typeOfCar)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
         }
 
-        foreach(GameObject go in _cars)
-        {
-            go.SetActive(false);
-        }
+        PrioraColorSelector();
 
-        if (_cars[_indexOfCar ])
-        {
-            _cars[_indexOfCar].SetActive(true);
-        }
-
-    }
-
-    public void SelectLeft()
-    {
-
-        _cars[_indexOfCar].SetActive(false);
-
-        _indexOfCar--;
-
-        if(_indexOfCar < 0)
-        {
-            _indexOfCar = _cars.Length - 1;
-        }
-
-        _cars[_indexOfCar].SetActive(true);
-
-        _typeOfCar = _cars[_indexOfCar].tag;
-
-        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
+        MusculeColorSelector();
 
     }
 
 
-    public void SelectRight()
+
+    public void SelectMusculeBody()
     {
 
-        _cars[_indexOfCar].SetActive(false);
+        _typeOfCar = "Muscule";
 
-        _indexOfCar++;
-
-        if (_indexOfCar == _cars.Length)
+        foreach (GameObject go in _carBodyType)
         {
-            _indexOfCar = 0;
+
+            if (go.tag == _typeOfCar)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
+        }
+    }
+
+    public void SelectPrioraBody()
+    {
+
+        _typeOfCar = "Priora";
+
+        foreach (GameObject go in _carBodyType)
+        {
+
+            if (go.tag == _typeOfCar)
+            {
+
+                go.SetActive(true);
+
+            }
+            else
+            {
+
+                go.SetActive(false);
+
+            }
+
         }
 
-        _cars[_indexOfCar].SetActive(true);
 
-        _typeOfCar = _cars[_indexOfCar].tag;
-
-        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
 
     }
 
@@ -101,17 +132,22 @@ public class SelectCars : MonoBehaviour
     public void StartLevelSceen()
     {
 
+
         StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
 
-        PlayerPrefs.SetInt("SelectCar", _indexOfCar);
+        StaticInfoPlayer1._currentTypeBodyCar = _typeOfCar;
+
+        StaticInfoPlayer1._currentTypeColorCar = _typeOfColor;
+
+        StaticInfoPlayer1._currentTypeSkinCar = _typeOfSkin;
+
+        // PlayerPrefs.SetInt("SelectCar", _indexOfCar);
 
         PlayerPrefs.SetString("_typeOfCar", _typeOfCar);
 
         PlayerPrefs.SetString("_typeOfColor", _typeOfColor);
 
         PlayerPrefs.SetString("_typeOfSkin", _typeOfSkin);
-
-
 
         SceneManager.LoadScene("Lavel_1_1");
 
@@ -199,11 +235,8 @@ public class SelectCars : MonoBehaviour
 
 
 
-    private void SelectorCurrentCarSpriteAndTag()
+    public void PrioraColorSelector()
     {
-        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
-
-        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
 
         foreach (GameObject go in _prioraColor)
         {
@@ -222,6 +255,12 @@ public class SelectCars : MonoBehaviour
             }
 
         }
+
+    }
+
+
+    public void MusculeColorSelector()
+    {
 
         foreach (GameObject go in _musculeColor)
         {
@@ -243,7 +282,41 @@ public class SelectCars : MonoBehaviour
     }
 
 
-  
 
+    private void SelectorCurrentCarSpriteAndTag()
+    {
+        StaticInfoPlayer1._currentTypeCar1P = _typeOfCar + _typeOfColor;
+
+        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
+
+        PrioraColorSelector();
+
+        MusculeColorSelector();
+
+    }
+
+
+    public void CarSkinSelectorBotton()
+    {
+
+        if (_TextSelectorCarScin.text == "Тачка")
+        {
+            _carScrollMenu.SetActive(true);
+
+            _skinScrollMenu.SetActive(false);
+
+            _TextSelectorCarScin.text = "Скин";
+
+        }
+        else
+        {
+            _skinScrollMenu.SetActive(true);
+
+            _carScrollMenu.SetActive(false);
+
+            _TextSelectorCarScin.text = "Тачка";
+        }
+
+    }
 
 }
