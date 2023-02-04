@@ -110,7 +110,7 @@ public class Shooting : MonoBehaviour
 
             _currentWeapon = bulletPrefab;
 
-              bulletForce = 40f;
+              bulletForce = 150f;
 
               bulletTimeInterval = 0.15f;
 
@@ -126,7 +126,7 @@ public class Shooting : MonoBehaviour
 
             _currentWeapon = rocketPrefab;
 
-            bulletForce = 20f;
+            bulletForce = 70f;
 
             bulletTimeInterval = 0.9f;
 

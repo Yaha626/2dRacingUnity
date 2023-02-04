@@ -41,13 +41,23 @@ public class SelectCars : MonoBehaviour
 
         _typeOfSkin = StaticInfoPlayer1._currentTypeSkinCar;
 
+        if (_typeOfCar == null)
+        {
+            _typeOfCar = "Priora";
+        }
+
+        if (_typeOfColor == null)
+        {
+            _typeOfColor = "Gray";
+        }
 
 
-        PlayerPrefs.GetString("_typeOfCar", _typeOfCar);
 
-        PlayerPrefs.GetString("_typeOfColor", _typeOfColor);
+       // PlayerPrefs.GetString("_typeOfCar", _typeOfCar);
 
-        PlayerPrefs.GetString("_typeOfSkin", _typeOfSkin);
+      //  PlayerPrefs.GetString("_typeOfColor", _typeOfColor);
+
+      //  PlayerPrefs.GetString("_typeOfSkin", _typeOfSkin);
 
 
 

@@ -72,9 +72,9 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1229805513
-  m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingLayerID: -758192861
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Time: 50
   m_Parameters:
     serializedVersion: 3
@@ -4933,8 +4933,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1963879039
-  m_SortingLayer: -3
+  m_SortingLayerID: -758192861
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5215,9 +5215,9 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1229805513
-  m_SortingLayer: -4
-  m_SortingOrder: 0
+  m_SortingLayerID: -758192861
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Time: 50
   m_Parameters:
     serializedVersion: 3
@@ -10107,8 +10107,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1963879039
-  m_SortingLayer: -3
+  m_SortingLayerID: -758192861
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
