@@ -25,6 +25,8 @@ TagManager:
   - Red
   - MusculeRed
   - MusculeGray
+  - RoadPointSpawn
+  - RoadParts
   layers:
   - Default
   - TransparentFX

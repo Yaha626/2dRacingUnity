@@ -633,7 +633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 412, y: 190}
+  m_AnchoredPosition: {x: 408.06, y: 186.34}
   m_SizeDelta: {x: 824, y: 380}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &428829235
@@ -1599,6 +1599,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1983552168}
     m_Modifications:
+    - target: {fileID: -7871556540511652807, guid: 84d2147997aaf454db70e3243ded89f5, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 84d2147997aaf454db70e3243ded89f5, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7871556540511652807, guid: 84d2147997aaf454db70e3243ded89f5, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3888481672020999207, guid: 84d2147997aaf454db70e3243ded89f5, type: 3}
       propertyPath: m_Name
       value: PrioraYellowTop
