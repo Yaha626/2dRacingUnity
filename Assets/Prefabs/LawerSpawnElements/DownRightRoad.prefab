@@ -393,6 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3946896463635659373}
+  - component: {fileID: 1779321123743177005}
   m_Layer: 5
   m_Name: DownRightRoad
   m_TagString: RoadParts
@@ -423,6 +424,14 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1779321123743177005
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179833982992977769}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2072510493966890016
 PrefabInstance:
   m_ObjectHideFlags: 0
