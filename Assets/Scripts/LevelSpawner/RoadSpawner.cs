@@ -4,6 +4,8 @@ using UnityEngine;
 public class RoadSpawner : MonoBehaviour
 {
 
+    public GameObject _canvasParent;
+
     public Direction direction;
 
     public enum Direction
@@ -32,6 +34,8 @@ public class RoadSpawner : MonoBehaviour
     private void Start()
     {
 
+        _canvasParent = GameObject.FindGameObjectWithTag("CanvasBackground");
+
         _variants = GameObject.FindGameObjectWithTag("RoadParts").GetComponent<RoadParts>();
 
         Destroy(gameObject, _waitTime);
@@ -49,7 +53,7 @@ public class RoadSpawner : MonoBehaviour
 
             if (direction == Direction.Top)
             {
-
+                
                 _rand = Random.Range(0, _variants._topRoad.Length);
 
                 Instantiate(_variants._topRoad[_rand], transform.position, _variants._topRoad[_rand].transform.rotation);
