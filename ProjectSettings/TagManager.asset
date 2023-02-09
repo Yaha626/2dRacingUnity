@@ -28,6 +28,7 @@ TagManager:
   - RoadPointSpawn
   - RoadParts
   - CanvasBackground
+  - ReadyPoint
   layers:
   - Default
   - TransparentFX

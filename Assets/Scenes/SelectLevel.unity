@@ -190,21 +190,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _topRoad:
-  - {fileID: 9179833982992977769, guid: 19bd354eaeea2ec439cf31c9e4e856df, type: 3}
-  - {fileID: 9179833982992977769, guid: 3adeabb400c0be84089b3c907371333e, type: 3}
-  - {fileID: 9179833982992977769, guid: 1528f735a98a66b47a6369c8e1ee9068, type: 3}
-  _leftRoad:
-  - {fileID: 9179833982992977769, guid: a81e28632d8aed8468a57c8dd60b4f4b, type: 3}
-  - {fileID: 9179833982992977769, guid: 19bd354eaeea2ec439cf31c9e4e856df, type: 3}
-  - {fileID: 9179833982992977769, guid: 541173bb19685f942b19208bffc408d9, type: 3}
-  _downRoad:
   - {fileID: 9179833982992977769, guid: 3adeabb400c0be84089b3c907371333e, type: 3}
   - {fileID: 9179833982992977769, guid: a81e28632d8aed8468a57c8dd60b4f4b, type: 3}
   - {fileID: 9179833982992977769, guid: 6e0f69363bcc20149ab56503d8c9c45f, type: 3}
+  _leftRoad:
+  - {fileID: 9179833982992977769, guid: 19bd354eaeea2ec439cf31c9e4e856df, type: 3}
   _rightRoad:
   - {fileID: 9179833982992977769, guid: 1528f735a98a66b47a6369c8e1ee9068, type: 3}
-  - {fileID: 9179833982992977769, guid: 541173bb19685f942b19208bffc408d9, type: 3}
-  - {fileID: 9179833982992977769, guid: 6e0f69363bcc20149ab56503d8c9c45f, type: 3}
 --- !u!4 &512638532
 Transform:
   m_ObjectHideFlags: 0

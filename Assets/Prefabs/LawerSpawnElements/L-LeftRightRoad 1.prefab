@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 305.5008, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &2072510493233907193
 CanvasRenderer:
@@ -192,7 +192,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 333.8549, y: 100}
+  m_SizeDelta: {x: 328.9258, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2072510493609764447
 CanvasRenderer:
@@ -268,7 +268,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 349.9257}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &2072510493892319149
 CanvasRenderer:
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3946896463635659373}
   m_Layer: 5
-  m_Name: LeftUpRoad
+  m_Name: L-LeftRightRoad 1
   m_TagString: RoadParts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,7 +412,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6719571212381702948}
+  - {fileID: 4414849941297638435}
   - {fileID: 2072510493267987608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -422,7 +422,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &8991170141671297831
+--- !u!1001 &2072510493966890016
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -431,7 +431,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7922920896437701724, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: direction
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2416106369902532611, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: m_RootOrder
@@ -439,11 +439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2416106369902532611, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -400
       objectReference: {fileID: 0}
     - target: {fileID: 2416106369902532611, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 400
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2416106369902532611, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -479,12 +479,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3553283329345699607, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
       propertyPath: m_Name
-      value: UpSpawnPoint (1)
+      value: UpSpawnPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
---- !u!4 &6719571212381702948 stripped
+--- !u!4 &4414849941297638435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2416106369902532611, guid: 5a64e028e2a9d2e4a9469a25308001bc, type: 3}
-  m_PrefabInstance: {fileID: 8991170141671297831}
+  m_PrefabInstance: {fileID: 2072510493966890016}
   m_PrefabAsset: {fileID: 0}

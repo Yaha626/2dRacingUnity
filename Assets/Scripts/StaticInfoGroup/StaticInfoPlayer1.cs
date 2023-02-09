@@ -14,4 +14,7 @@ public static class StaticInfoPlayer1
     public static string _currentTypeSkinCar;
 
 
+    public static float _initedRoadPartsCounter;
+
+
 }

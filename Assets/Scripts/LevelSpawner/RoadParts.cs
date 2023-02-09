@@ -9,8 +9,6 @@ public class RoadParts : MonoBehaviour
 
     public GameObject[] _leftRoad;
 
-    public GameObject[] _downRoad;
-
     public GameObject[] _rightRoad;
 
 }
