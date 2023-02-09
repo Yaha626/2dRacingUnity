@@ -24,6 +24,8 @@ public class RoadSpawner : MonoBehaviour
 
     private int _rand;
 
+    private int _randFunction;
+
     private float _waitTime = 3f;
 
     public int _maxRoadParts = 5;
@@ -39,7 +41,10 @@ public class RoadSpawner : MonoBehaviour
 
         Destroy(gameObject, _waitTime);
 
-        Invoke("SpawnRoad", 1f);      
+         Invoke("SpawnRoad", 1f);
+
+  
+
 
     }
 
@@ -48,7 +53,12 @@ public class RoadSpawner : MonoBehaviour
 
 
     public void SpawnRoad()
-    {    
+    {
+
+        SpawnUpElement();
+
+
+/*
 
         if (direction == Direction.Top && StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
         {            
@@ -101,8 +111,56 @@ public class RoadSpawner : MonoBehaviour
             Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);        
 
         }
-
+*/
     }
+
+
+    private void SpawnUpElement()
+    {
+        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts) 
+        {
+            _rand = Random.Range(0, _variants._topRoad.Length);
+
+            var tmp = Instantiate(_variants._topRoad[_rand], transform.position, _variants._topRoad[_rand].transform.rotation);
+
+            tmp.transform.parent = _canvasParent.transform;
+
+            tmp.transform.localScale = Vector3.one;
+
+            StaticInfoPlayer1._initedRoadPartsCounter++;
+
+            Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
+
+            _randFunction = Random.Range(0, 1);
+
+       //     if (_randFunction == 1)
+        //    {
+
+       //     }
+        //    else
+        //    {
+
+       //     }
+        }
+    }
+
+    public void SpawnLeftElement()
+    {
+        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
+        {
+
+        }
+    }
+
+
+    public void SpawnRighttElement()
+    {
+        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
+        {
+
+        }
+    }
+
 
 
 
