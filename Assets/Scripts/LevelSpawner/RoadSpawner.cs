@@ -1,261 +1,217 @@
 
 using UnityEngine;
 
+
+
 public class RoadSpawner : MonoBehaviour
 {
     private GameObject _canvasParent;
 
-    public Direction direction;
 
-    public enum Direction
-    {
+    
+    public GameObject _downUp_1;
 
-        Top,
+    public GameObject _downLeft_2;
 
-        Left,
+    public GameObject _downRight_3;
 
-        Right
+    public GameObject _l_LeftRight_4;
 
-    }
+    public GameObject _r_LeftRightt_5;
 
-    private RoadParts _variants;
+    public GameObject _upRigh_6;
+   
+    public GameObject _upLeft_7;
 
-    private GameObject _variantsSpawnPoint;
 
-    private int _rand;
+    public GameObject _spawnPoint;
 
-    private int _randFunction;
 
-    private float _waitTime = 3f;
 
-    public int _maxRoadParts = 5;
+   // private int _rand;
+    
+   // private int _rand1;
+   
+    //private int _rand2;
+
+  //  public int _maxRoadParts = 15;
+
+    private float _x = 0f;
+
+    private float _y = 0f;
+
+    private float _z = 1f;
 
 
 
     private void Start()
     {
-
+        
         _canvasParent = GameObject.FindGameObjectWithTag("CanvasBackground");
 
-        _variants = GameObject.FindGameObjectWithTag("RoadParts").GetComponent<RoadParts>();
-
-        Destroy(gameObject, _waitTime);
-
-         Invoke("SpawnRoad", 1f);
-
-  
+        Invoke("SpawnUpElement", 0.1f);
 
 
     }
 
-
-
-
-
-    public void SpawnRoad()
-    {
-
-        SpawnUpElement();
-
-
-/*
-
-        if (direction == Direction.Top && StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
-        {            
-           
-            _rand = Random.Range(0, _variants._topRoad.Length);
-
-            var tmp = Instantiate(_variants._topRoad[_rand], transform.position, _variants._topRoad[_rand].transform.rotation);
-
-            tmp.transform.parent = _canvasParent.transform;
-
-            tmp.transform.localScale = Vector3.one;
-
-            StaticInfoPlayer1._initedRoadPartsCounter++;
-
-            Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
-
-        }
-        else if (direction == Direction.Right && StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
-        {
-           
-
-            _rand = Random.Range(0, _variants._rightRoad.Length);
-
-            var tmp = Instantiate(_variants._rightRoad[_rand], transform.position, _variants._rightRoad[_rand].transform.rotation);
-
-            tmp.transform.parent = _canvasParent.transform;
-
-            tmp.transform.localScale = Vector3.one;
-
-            StaticInfoPlayer1._initedRoadPartsCounter++;
-
-            Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
-
-        }
-
-        else if (direction == Direction.Left && StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
-        {
-           
-
-            _rand = Random.Range(0, _variants._leftRoad.Length);
-
-            var tmp = Instantiate(_variants._leftRoad[_rand], transform.position, _variants._leftRoad[_rand].transform.rotation);
-
-            tmp.transform.parent = _canvasParent.transform;
-
-            tmp.transform.localScale = Vector3.one;
-
-            StaticInfoPlayer1._initedRoadPartsCounter++;
-
-            Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);        
-
-        }
-*/
-    }
 
 
     private void SpawnUpElement()
     {
-        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts) 
+        if (StaticInfoPlayer1._initedRoadPartsCounter < StaticInfoPlayer1._maxRoadParts) 
         {
-            _rand = Random.Range(0, _variants._topRoad.Length);
 
-            var tmp = Instantiate(_variants._topRoad[_rand], transform.position, _variants._topRoad[_rand].transform.rotation);
+            var  _rand = Random.Range(0, 3);
 
-            tmp.transform.parent = _canvasParent.transform;
+            _y += 12f;
 
-            tmp.transform.localScale = Vector3.one;
+            if (_rand == 0)
+            {
+
+                var tmp = Instantiate(_downUp_1, new Vector3(_x, _y, _z), Quaternion.identity);
+
+                tmp.transform.parent = _canvasParent.transform;
+
+             //   tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+                Invoke("SpawnUpElement", 0.1f);
+
+               // SpawnUpElement();
+
+            }
+
+            if (_rand == 1)
+            {
+
+                var tmp = Instantiate(_downLeft_2, new Vector3(_x, _y, _z), Quaternion.identity);
+
+                tmp.transform.parent = _canvasParent.transform;
+
+              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+                Invoke("SpawnLeftElement", 0.1f);
+
+              //  SpawnLeftElement();
+
+            }
+
+            if (_rand == 2)
+            {
+
+                var tmp = Instantiate(_downRight_3, new Vector3(_x, _y, _z), Quaternion.identity);
+
+                tmp.transform.parent = _canvasParent.transform;
+
+             //   tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+                Invoke("SpawnRighttElement", 0.1f);
+
+              //  SpawnRighttElement();
+
+            }
 
             StaticInfoPlayer1._initedRoadPartsCounter++;
 
             Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
 
-            _randFunction = Random.Range(0, 1);
-
-       //     if (_randFunction == 1)
-        //    {
-
-       //     }
-        //    else
-        //    {
-
-       //     }
         }
     }
 
     public void SpawnLeftElement()
     {
-        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
+
+        var _rand1 = Random.Range(0, 2);
+
+        _x -= 12f;
+
+        if (StaticInfoPlayer1._initedRoadPartsCounter < StaticInfoPlayer1._maxRoadParts)
         {
 
+            if (_rand1 == 0)
+            {
+
+                var tmp = Instantiate(_r_LeftRightt_5, new Vector3(_x, _y, _z), Quaternion.identity);
+
+                tmp.transform.parent = _canvasParent.transform;
+
+            //    tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+                Invoke("SpawnLeftElement", 0.1f);
+
+              //  SpawnLeftElement();
+
+            }
+
+            if (_rand1 == 1)
+            {
+
+                var tmp = Instantiate(_upRigh_6, new Vector3(_x, _y, _z), Quaternion.identity);
+
+                tmp.transform.parent = _canvasParent.transform;
+
+              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
+                Invoke("SpawnUpElement", 0.1f);
+
+              //  SpawnUpElement();
+
+            }
+
         }
+
+        StaticInfoPlayer1._initedRoadPartsCounter++;
+
+        Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
+
     }
 
 
     public void SpawnRighttElement()
     {
-        if (StaticInfoPlayer1._initedRoadPartsCounter < _maxRoadParts)
+
+        var  _rand2 = Random.Range(0, 2);
+
+        _x += 12f;
+
+        if (StaticInfoPlayer1._initedRoadPartsCounter < StaticInfoPlayer1._maxRoadParts)
         {
 
-        }
-    }
-
-
-
-
-    /*
-        public void SpawnRoad()
-        {
-
-            if (!_spawned)
+            if (_rand2 == 0)
             {
-                if (_initedRoadPartsCounter < _maxRoadParts)
-                {
 
+                var tmp = Instantiate(_l_LeftRight_4, new Vector3(_x, _y, _z), Quaternion.identity);
 
-                    if (direction == Direction.Top)
-                    {
+                tmp.transform.parent = _canvasParent.transform;
 
-                        _rand = Random.Range(0, _variants._topRoad.Length);
+              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
-                        var tmp = Instantiate(_variants._topRoad[_rand], transform.position, _variants._topRoad[_rand].transform.rotation);
+                Invoke("SpawnRighttElement", 0.1f);
 
-                        tmp.transform.parent = _canvasParent.transform;
+              //  SpawnRighttElement();
 
-                        tmp.transform.localScale = Vector3.one;
+            }
 
+            if (_rand2 == 1)
+            {
 
+                var tmp = Instantiate(_upLeft_7, new Vector3(_x, _y, _z), Quaternion.identity);
 
-                    }
-                    else if (direction == Direction.Right)
-                    {
+                tmp.transform.parent = _canvasParent.transform;
 
-                        _rand = Random.Range(0, _variants._rightRoad.Length);
+              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
 
-                        var tmp = Instantiate(_variants._rightRoad[_rand], transform.position, _variants._rightRoad[_rand].transform.rotation);
+                Invoke("SpawnUpElement", 0.1f);
 
-                        tmp.transform.parent = _canvasParent.transform;
+               // SpawnUpElement();
 
-                        tmp.transform.localScale = Vector3.one;
-
-
-
-                    }
-                    else if (direction == Direction.Bottom)
-                    {
-
-                        _rand = Random.Range(0, _variants._downRoad.Length);
-
-                        var tmp = Instantiate(_variants._downRoad[_rand], transform.position, _variants._downRoad[_rand].transform.rotation);
-
-                        tmp.transform.parent = _canvasParent.transform;
-
-                        tmp.transform.localScale = Vector3.one;
-
-
-
-                    }
-                    else if (direction == Direction.Left)
-                    {
-
-                        _rand = Random.Range(0, _variants._leftRoad.Length);
-
-                        var tmp = Instantiate(_variants._leftRoad[_rand], transform.position, _variants._leftRoad[_rand].transform.rotation);
-
-                        tmp.transform.parent = _canvasParent.transform;
-
-                        tmp.transform.localScale = Vector3.one;
-
-
-
-                    }
-
-                    _spawned = true;
-
-
-
-                    Debug.Log(_initedRoadPartsCounter);
-
-
-
-                }
             }
 
         }
 
-    */
-    public void OnTriggerStay2D(Collider2D other)
-    {
+        StaticInfoPlayer1._initedRoadPartsCounter++;
 
-      //  if (other.CompareTag("RoadParts") && other.GetComponent<RoadSpawner>()._spawned)
-     //   {
-
-     //       Destroy(gameObject);
-
-    //    }
+        Debug.Log(StaticInfoPlayer1._initedRoadPartsCounter);
 
     }
-
 
 }

@@ -13,8 +13,10 @@ public static class StaticInfoPlayer1
 
     public static string _currentTypeSkinCar;
 
-
+    // счетчик созданных трас 
     public static float _initedRoadPartsCounter;
+
+    public static float _maxRoadParts = 50;
 
 
 }
