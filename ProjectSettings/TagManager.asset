@@ -25,10 +25,10 @@ TagManager:
   - Red
   - MusculeRed
   - MusculeGray
-  - RoadPointSpawn
   - RoadParts
   - CanvasBackground
   - ReadyPoint
+  - LootSpawnPoint
   layers:
   - Default
   - TransparentFX

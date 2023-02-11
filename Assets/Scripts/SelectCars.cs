@@ -151,8 +151,6 @@ public class SelectCars : MonoBehaviour
 
         StaticInfoPlayer1._currentTypeSkinCar = _typeOfSkin;
 
-        // PlayerPrefs.SetInt("SelectCar", _indexOfCar);
-
         PlayerPrefs.SetString("_typeOfCar", _typeOfCar);
 
         PlayerPrefs.SetString("_typeOfColor", _typeOfColor);

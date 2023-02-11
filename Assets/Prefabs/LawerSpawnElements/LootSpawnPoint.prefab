@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6618474078610134381}
   - component: {fileID: 3078041172992569022}
   - component: {fileID: 1668984920015898628}
-  - component: {fileID: 4368480610174953099}
+  - component: {fileID: 3138327837499717847}
   m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: RoadPointSpawn
+  m_Name: LootSpawnPoint
+  m_TagString: LootSpawnPoint
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4368480610174953099
+--- !u!114 &3138327837499717847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,15 +90,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8163947966640414644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f69bce176cce5c43bcf8e5fb8c7af20, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d1de9e9939867845823d32299b3078d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _downUp_1: {fileID: 0}
-  _downLeft_2: {fileID: 0}
-  _downRight_3: {fileID: 0}
-  _l_LeftRight_4: {fileID: 0}
-  _r_LeftRightt_5: {fileID: 0}
-  _upRigh_6: {fileID: 0}
-  _upLeft_7: {fileID: 0}
-  _spawnPoint: {fileID: 0}
-  _maxRoadParts: 5
+  _LootObjects:
+  - {fileID: 8069063838576360655, guid: 45f8c8c8ecb71ad48be1e9ee1f8e334e, type: 3}
+  - {fileID: 3844841416720351523, guid: ba6d5c9dc1155624c96e3227f7d9e042, type: 3}
