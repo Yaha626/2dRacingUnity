@@ -29,6 +29,7 @@ TagManager:
   - CanvasBackground
   - ReadyPoint
   - LootSpawnPoint
+  - 1111
   layers:
   - Default
   - TransparentFX

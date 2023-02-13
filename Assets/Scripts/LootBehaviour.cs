@@ -19,7 +19,7 @@ public class LootBehaviour : MonoBehaviour
 
             SetDisabledLoot();
 
-            getAudioEffect.Play();
+           // getAudioEffect.Play();
 
             Invoke("SetActiveLoot", 2f);
 
