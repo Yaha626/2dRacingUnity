@@ -16,13 +16,17 @@ public class HandlerInputAI : MonoBehaviour
 
     CarController1Player _CarController;
 
-    private float _wayPointSelectorCounter = 1;
+    private int _wayPointSelectorCounter = 1;
+
+    private float _starter;
 
 
     private void Awake()
     {
 
         _CarController = GetComponent<CarController1Player>();
+
+        _starter = StaticInfoPlayer1._initedRoadPartsCounter;
 
 
     }
@@ -34,18 +38,23 @@ public class HandlerInputAI : MonoBehaviour
 
         Vector2 inputVector = Vector2.zero;
         
-        switch (aiMode)
+       if(_starter > 3)
         {
-            case AImode.followPlayer:
-                FollowPlayer();
-                break;
+            switch (aiMode)
+            {
+                case AImode.followPlayer:
+                    FollowPlayer();
+                    break;
 
-            case AImode.followWayPoints:
-                FollowWayPoints();
-                break;
+                case AImode.followWayPoints:
+                    FollowWayPoints();
+                    break;
 
 
+            }
         }
+        
+
 
         inputVector.x = TurnTowardTarget();
 
@@ -77,7 +86,8 @@ public class HandlerInputAI : MonoBehaviour
 
         if (_targetTransform == null)
         {
-            _targetTransform = GameObject.FindGameObjectWithTag("wayPoint" + _wayPointSelectorCounter.ToString()).transform;
+
+            _targetTransform = GameObject.FindGameObjectWithTag("wayPoint"+ _wayPointSelectorCounter.ToString()).transform;
 
         }
 
@@ -115,6 +125,7 @@ public class HandlerInputAI : MonoBehaviour
         if (collision.gameObject.tag == "checkPoint")
         {
             _wayPointSelectorCounter += 1;
+           
         }
 
     }

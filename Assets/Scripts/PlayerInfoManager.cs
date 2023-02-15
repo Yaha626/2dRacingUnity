@@ -31,8 +31,6 @@ public class PlayerInfoManager : MonoBehaviour
 
         MobileControlCanvasHider();
 
-        Debug.Log(StaticInfoPlayer1._currentTypeCar1P);
-
     }
 
     private void MobileControlCanvasHider()

@@ -37,7 +37,7 @@ public class RoadSpawner : MonoBehaviour
     private void Start()
     {
 
-        StaticInfoPlayer1._initedRoadPartsCounter = 0;
+        StaticInfoPlayer1._initedRoadPartsCounter = 1;
 
         _canvasParent = GameObject.FindGameObjectWithTag("CanvasBackground");
 
