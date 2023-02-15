@@ -32,7 +32,7 @@ public class CarCondition : MonoBehaviour
         if(_currentHealth <= 0)
         {
 
-            explousion.Play();
+          //  explousion.Play();
 
             DisabledCarOnDeath();
 

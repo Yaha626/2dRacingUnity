@@ -18,5 +18,4 @@ public static class StaticInfoPlayer1
 
     public static float _maxRoadParts = 50;
 
-
 }

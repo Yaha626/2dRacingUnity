@@ -30,6 +30,68 @@ TagManager:
   - ReadyPoint
   - LootSpawnPoint
   - 1111
+  - wayPointNull
+  - wayPoint1
+  - wayPoint2
+  - wayPoint3
+  - wayPoint4
+  - wayPoint5
+  - wayPoint6
+  - wayPoint7
+  - wayPoint8
+  - wayPoint9
+  - wayPoint10
+  - wayPoint11
+  - wayPoint12
+  - wayPoint13
+  - wayPoint14
+  - wayPoint15
+  - wayPoint16
+  - wayPoint17
+  - wayPoint18
+  - wayPoint19
+  - wayPoint20
+  - wayPoint21
+  - wayPoint22
+  - wayPoint23
+  - wayPoint24
+  - wayPoint25
+  - wayPoint26
+  - wayPoint27
+  - wayPoint28
+  - wayPoint29
+  - wayPoint30
+  - wayPoint31
+  - wayPoint32
+  - wayPoint33
+  - wayPoint34
+  - wayPoint35
+  - wayPoint36
+  - wayPoint37
+  - wayPoint38
+  - wayPoint39
+  - wayPoint40
+  - wayPoint41
+  - wayPoint42
+  - wayPoint43
+  - wayPoint44
+  - wayPoint45
+  - wayPoint46
+  - wayPoint47
+  - wayPoint48
+  - wayPoint49
+  - wayPoint50
+  - wayPoint51
+  - wayPoint52
+  - wayPoint53
+  - wayPoint54
+  - wayPoint55
+  - wayPoint56
+  - wayPoint57
+  - wayPoint58
+  - wayPoint59
+  - wayPoint60
+  - checkPoint
   layers:
   - Default
   - TransparentFX

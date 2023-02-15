@@ -16,7 +16,7 @@ public class HandlerInputAI : MonoBehaviour
 
     CarController1Player _CarController;
 
-    private float _numberOfNextRoadPoint;
+    private float _wayPointSelectorCounter = 1;
 
 
     private void Awake()
@@ -49,7 +49,7 @@ public class HandlerInputAI : MonoBehaviour
 
         inputVector.x = TurnTowardTarget();
 
-        inputVector.y = 1.0f;
+        inputVector.y = 0.3f;
 
         _CarController.SetInputVector(inputVector);
 
@@ -77,9 +77,8 @@ public class HandlerInputAI : MonoBehaviour
 
         if (_targetTransform == null)
         {
-            _targetTransform = GameObject.FindGameObjectWithTag("1111").transform;
+            _targetTransform = GameObject.FindGameObjectWithTag("wayPoint" + _wayPointSelectorCounter.ToString()).transform;
 
-            //_targetTransform = GameObject.FindGameObjectWithTag("wayPoint" + _numberOfNextRoadPoint.ToString()).transform;
         }
 
         if (_targetTransform != null)
@@ -112,6 +111,11 @@ public class HandlerInputAI : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.tag == "checkPoint")
+        {
+            _wayPointSelectorCounter += 1;
+        }
 
     }
 

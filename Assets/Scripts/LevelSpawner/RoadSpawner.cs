@@ -7,7 +7,6 @@ public class RoadSpawner : MonoBehaviour
 {
     private GameObject _canvasParent;
 
-
     
     public GameObject _downUp_1;
 
@@ -26,15 +25,6 @@ public class RoadSpawner : MonoBehaviour
 
     public GameObject _spawnPoint;
 
-
-
-   // private int _rand;
-    
-   // private int _rand1;
-   
-    //private int _rand2;
-
-  //  public int _maxRoadParts = 15;
 
     private float _x = 0f;
 
@@ -74,13 +64,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_downUp_1, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-             //   tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+              
 
                 Invoke("SpawnUpElement", 0.1f);
-
-               // SpawnUpElement();
 
             }
 
@@ -89,13 +81,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_downLeft_2, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnLeftElement", 0.1f);
-
-              //  SpawnLeftElement();
 
             }
 
@@ -104,13 +98,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_downRight_3, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-             //   tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnRighttElement", 0.1f);
-
-              //  SpawnRighttElement();
 
             }
 
@@ -136,13 +132,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_r_LeftRightt_5, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-            //    tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnLeftElement", 0.1f);
-
-              //  SpawnLeftElement();
 
             }
 
@@ -151,13 +149,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_upRigh_6, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnUpElement", 0.1f);
-
-              //  SpawnUpElement();
 
             }
 
@@ -185,13 +185,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_l_LeftRight_4, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnRighttElement", 0.1f);
-
-              //  SpawnRighttElement();
 
             }
 
@@ -200,13 +202,15 @@ public class RoadSpawner : MonoBehaviour
 
                 var tmp = Instantiate(_upLeft_7, new Vector3(_x, _y, _z), Quaternion.identity);
 
+                var _wayPoint = GameObject.FindGameObjectWithTag("wayPointNull");
+
+                _wayPoint.tag = "wayPoint" + StaticInfoPlayer1._initedRoadPartsCounter.ToString();
+
                 tmp.transform.parent = _canvasParent.transform;
 
-              //  tmp.transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
+
 
                 Invoke("SpawnUpElement", 0.1f);
-
-               // SpawnUpElement();
 
             }
 
