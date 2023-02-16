@@ -16,9 +16,17 @@ public class HandlerInputAI : MonoBehaviour
 
     CarController1Player _CarController;
 
-    private int _wayPointSelectorCounter = 1;
+    public GameObject _rayMainFront;
 
-    private float _starter;
+    public GameObject _rayMainFrontPointDirection;
+
+    [SerializeField] float rayMainFrontDistance;
+ 
+    float _actionOnDistance;
+
+
+
+
 
 
     private void Awake()
@@ -26,39 +34,56 @@ public class HandlerInputAI : MonoBehaviour
 
         _CarController = GetComponent<CarController1Player>();
 
-        _starter = StaticInfoPlayer1._initedRoadPartsCounter;
+    }
 
-
+    private void Start()
+    {
+        _actionOnDistance = 0f;
     }
 
 
+    private void Update()
+    {
 
-    private void FixedUpdate()
+      RaycastHit2D _hitObstance =   Physics2D.Raycast(_rayMainFront.transform.position, Vector2.up , rayMainFrontDistance);
+
+        if(_hitObstance.collider != null)
+        {
+            Debug.Log("Ray is Detect Object");
+            Debug.DrawRay(transform.position, transform.up * rayMainFrontDistance, Color.green); // this is good!
+
+           // Debug.DrawRay(_rayMainFront.transform.position, Vector2.up, rayMainFrontDistance, Color.yellow);
+
+        }
+        else
+        {
+            Debug.Log("Ray is not Detect Object");
+            Debug.DrawRay(_rayMainFront.transform.position, _rayMainFrontPointDirection.transform.position, Color.red);
+        }
+
+    }
+
+    private void LateUpdate()
     {
 
         Vector2 inputVector = Vector2.zero;
-        
-       if(_starter > 3)
+    
+        switch (aiMode)
         {
-            switch (aiMode)
-            {
-                case AImode.followPlayer:
-                    FollowPlayer();
-                    break;
+            case AImode.followPlayer:
+               FollowPlayer();
+               break;
 
-                case AImode.followWayPoints:
-                    FollowWayPoints();
-                    break;
+            case AImode.followWayPoints:
+               FollowWayPoints();
+               break;
 
 
-            }
         }
-        
-
 
         inputVector.x = TurnTowardTarget();
 
-        inputVector.y = 0.3f;
+        inputVector.y = 0.05f;
 
         _CarController.SetInputVector(inputVector);
 
@@ -87,15 +112,16 @@ public class HandlerInputAI : MonoBehaviour
         if (_targetTransform == null)
         {
 
-            _targetTransform = GameObject.FindGameObjectWithTag("wayPoint"+ _wayPointSelectorCounter.ToString()).transform;
+         //   _targetTransform = _wayCorrector.transform;
 
         }
 
         if (_targetTransform != null)
         {
-            _targetPosition = _targetTransform.position;
-        }
 
+            _targetPosition = _targetTransform.position;
+
+        }
 
     }
 
@@ -117,18 +143,5 @@ public class HandlerInputAI : MonoBehaviour
         
         return steerAmount;
     }
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-        if (collision.gameObject.tag == "checkPoint")
-        {
-            _wayPointSelectorCounter += 1;
-           
-        }
-
-    }
-
 
 }

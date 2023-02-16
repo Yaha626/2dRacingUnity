@@ -37,7 +37,7 @@ public class RoadSpawner : MonoBehaviour
     private void Start()
     {
 
-        StaticInfoPlayer1._initedRoadPartsCounter = 1;
+        StaticInfoPlayer1._initedRoadPartsCounter =1;
 
         _canvasParent = GameObject.FindGameObjectWithTag("CanvasBackground");
 
@@ -57,7 +57,7 @@ public class RoadSpawner : MonoBehaviour
 
             var  _rand = Random.Range(0, 3);
 
-            _y += 12f;
+            _y += 36f;
 
             if (_rand == 0)
             {
@@ -122,7 +122,7 @@ public class RoadSpawner : MonoBehaviour
 
         var _rand1 = Random.Range(0, 2);
 
-        _x -= 12f;
+        _x -= 36f;
 
         if (StaticInfoPlayer1._initedRoadPartsCounter < StaticInfoPlayer1._maxRoadParts)
         {
@@ -175,7 +175,7 @@ public class RoadSpawner : MonoBehaviour
 
         var  _rand2 = Random.Range(0, 2);
 
-        _x += 12f;
+        _x += 36f;
 
         if (StaticInfoPlayer1._initedRoadPartsCounter < StaticInfoPlayer1._maxRoadParts)
         {
