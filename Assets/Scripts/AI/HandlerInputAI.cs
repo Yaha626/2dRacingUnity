@@ -125,7 +125,7 @@ public class HandlerInputAI : MonoBehaviour
 
         inputVector.x = TurnTowardTarget();
 
-        inputVector.y = 0.2f;
+        inputVector.y = 1f;
 
         _CarController.SetInputVector(inputVector);
 
