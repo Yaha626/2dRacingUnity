@@ -1901,6 +1901,10 @@ PrefabInstance:
       value: AI Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 7947893128556259230, guid: ccbf8c1d1469db44787d75e63fb9c05d, type: 3}
+      propertyPath: aiMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947893128556259230, guid: ccbf8c1d1469db44787d75e63fb9c05d, type: 3}
       propertyPath: rayMainFrontDistance
       value: 15
       objectReference: {fileID: 0}
